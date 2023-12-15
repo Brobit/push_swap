@@ -88,3 +88,26 @@ if there is an error in one of this steps, write Error\n in standard error (stde
 
 
 ~ Bonus :
+
+The checker take in argument the same input as push swap,
+so it's the argument to be sorted, and it take the standard input too,
+so we can give it instruction to sort the list manually and he apply it,
+or he take the output of push swap and execute it.
+Once all the instruction are make, we need to check if it's sorted,
+if it's sorted, we return "OK\n", if it's not sorted, we retrun "KO\n".
+
+The checker take the stack to sort as the first parameter,
+the second parameter is him listening to the standard input
+
+	- Things to do :
+		copy the error handler from push swap
+		add the standard input as a parameter
+		store the standard input
+		check if the input are correct:
+			if a parameter is not a number,
+			or if there is an int overflow/underflow,
+			or if there is duplication,
+			or if one of the instruction does not exist or is not well formulate
+			we return "Error\n"
+
+That's it for the moment :)
