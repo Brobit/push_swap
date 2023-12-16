@@ -101,13 +101,20 @@ the second parameter is him listening to the standard input
 
 	- Things to do :
 		copy the error handler from push swap
-		add the standard input as a parameter
-		store the standard input
+		add the standard input as a parameter and store the standard input
+			to do it, use gnl and put read on the standard input fd,
+			then concatenate all the return line in one string
+			and split them in a char **
 		check if the input are correct:
 			if a parameter is not a number,
 			or if there is an int overflow/underflow,
 			or if there is duplication,
 			or if one of the instruction does not exist or is not well formulate
 			we return "Error\n"
+
+~ all :
+	- make structure that store the string of instruction and one another
+	to store there size (ex: ra (3), rb (3), rrr (4),..)
+	- make define for stderr, stdin, stdout,... 
 
 That's it for the moment :)
