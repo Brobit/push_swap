@@ -43,9 +43,8 @@ SRCS = ft_atoi.c\
 	ft_strtrim.c\
 	ft_substr.c\
 	ft_tolower.c\
-	ft_toupper.c
-
-BONUS = ft_lstadd_back.c\
+	ft_toupper.c\
+	ft_lstadd_back.c\
 	ft_lstadd_front.c\
 	ft_lstclear.c\
 	ft_lstdelone.c\
@@ -56,8 +55,6 @@ BONUS = ft_lstadd_back.c\
 	ft_lstsize.c
 
 OBJS = ${SRCS:.c=.o}
-
-BONUS_OBJS = ${BONUS:.c=.o}
 
 NAME = libft.a
 
@@ -70,9 +67,6 @@ all: ${NAME}
 ${NAME}: ${OBJS}
 		ar rcs ${NAME} ${OBJS}
 
-bonus: ${OBJS} ${BONUS_OBJS}
-		ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
-
 %.o: %.c
 		${CC} ${CFLAGS} -Iincludes -c $< -o $@
 
@@ -83,3 +77,5 @@ fclean: clean
 		rm -f ${NAME}
 
 re: fclean all
+
+.PHONY : all clean fclean re

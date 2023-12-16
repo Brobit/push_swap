@@ -12,13 +12,13 @@
 
 #include "get_next_line_bonus.h"
 
-char	*ft_free(char *line)
+static char	*ft_free(char *line)
 {
 	free(line);
 	return (NULL);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line_multiple_fd(int fd)
 {
 	static char	buffer[FD_MAX][BUFFER_SIZE + 1] = {};
 	char		*line;

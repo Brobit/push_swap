@@ -12,7 +12,7 @@
 
 #include "get_next_line_bonus.h"
 
-void	ft_cut_buffer(char *buffer)
+void	ft_cut_buffer_mfd(char *buffer)
 {
 	int		i;
 	int		j;
@@ -28,7 +28,7 @@ void	ft_cut_buffer(char *buffer)
 	buffer[j] = '\0';
 }
 
-char	*ft_mod_join(char *line, char *buffer)
+char	*ft_mod_join_mfd(char *line, char *buffer)
 {
 	char	*tmp;
 	int		i;
@@ -57,7 +57,7 @@ char	*ft_mod_join(char *line, char *buffer)
 	return (ft_test_end(tmp));
 }
 
-int	ft_mod_strchr(char *buffer)
+int	ft_mod_strchr_mfd(char *buffer)
 {
 	int	i;
 
@@ -73,7 +73,7 @@ int	ft_mod_strchr(char *buffer)
 	return (0);
 }
 
-int	ft_mstrlen(char *str)
+int	ft_mstrlen_mfd(char *str)
 {
 	int	i;
 
@@ -87,7 +87,7 @@ int	ft_mstrlen(char *str)
 	return (i);
 }
 
-char	*ft_test_end(char *dest)
+char	*ft_test_end_mfd(char *dest)
 {
 	if (dest[0] == '\0')
 	{

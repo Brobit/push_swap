@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 CC = cc
 FLAGS = -Wall -Wextra -Werror -g
-LIB = "libft/libft.a"
+LIB = "../libft/libft.a"
 SRC = ft_conflit_checker.c \
 	  ft_init.c \
 	  ft_flag_writer.c \
@@ -21,8 +21,6 @@ SRC = ft_conflit_checker.c \
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
-
-bonus: $(NAME)
 
 $(NAME) : $(OBJ) $(LIB)
 	cp $(LIB) $(NAME)
