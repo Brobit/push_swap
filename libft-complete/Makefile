@@ -1,25 +1,29 @@
 NAME = libft_complete.a
 LIB_GNL = get_next_line/gnl.a
-LIB = printf/libftprintf.a
+LIB_PRINTF = printf/libftprintf.a
+LIB_LIBFT = libft/libft.a
 
 all : ${NAME}
 
-${NAME} : ${LIB_GNL} ${LIB}
-	echo "CREATE ${NAME}\nADDLIB ${LIB_GNL}\nADDLIB ${LIB}\nSAVE\nEND" | ar -M
+${NAME} : ${LIB_GNL} ${LIB_PRINTF} ${LIB_LIBFT}
+	echo "CREATE ${NAME}\nADDLIB ${LIB_GNL}\nADDLIB ${LIB_PRINTF}\nADDLIB ${LIB_LIBFT}\nSAVE\nEND" | ar -M
 
 ${LIB_GNL} :
 	${MAKE} -C $$(dirname $@)
 
+${LIB_PRINTF} :
+	${MAKE} -C $$(dirname $@)
 
-${LIB} :
+${LIB_LIBFT} :
 	${MAKE} -C $$(dirname $@)
 
 clean :
-	${MAKE} clean -C $$(dirname ${LIB});
+	${MAKE} clean -C $$(dirname ${LIB_PRINTF});
 	$(MAKE) clean -C $$(dirname ${LIB_GNL});
+	$(MAKE) clean -C $$(dirname ${LIB_LIBFT});
 
 fclean : clean
-	${RM} ${LIB} ${LIB_GNL} ${NAME}
+	${RM} ${LIB_PRINTF} ${LIB_GNL} ${LIB_LIBFT} ${NAME}
 
 re : fclean all
 

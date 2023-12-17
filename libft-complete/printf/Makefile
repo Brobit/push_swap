@@ -1,7 +1,6 @@
 NAME = libftprintf.a
 CC = cc
 FLAGS = -Wall -Wextra -Werror -g
-LIB = "../libft/libft.a"
 SRC = ft_conflit_checker.c \
 	  ft_init.c \
 	  ft_flag_writer.c \
@@ -22,22 +21,16 @@ OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(LIB)
-	cp $(LIB) $(NAME)
+$(NAME) : $(OBJ)
 	ar rs $(NAME) $(OBJ)
-
-$(LIB) :
-	$(MAKE) -C $$(dirname $@)
 
 %.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
-	$(MAKE) clean -C $$(dirname $(LIB));
 	rm -f $(OBJ)
 
 fclean : clean
-	rm -f $(LIB)
 	rm -f $(NAME)
 
 re : fclean all
