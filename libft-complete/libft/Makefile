@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 15:09:47 by almarico          #+#    #+#              #
-#    Updated: 2023/12/17 13:55:01 by almarico         ###   ########.fr        #
+#    Updated: 2023/12/17 14:24:15 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ OBJS = ${SRCS:.c=.o}
 
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 CC = cc
 
@@ -77,5 +77,3 @@ fclean: clean
 		rm -f ${NAME}
 
 re: fclean all
-
-.PHONY : all clean fclean re

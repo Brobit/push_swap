@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:27:38 by almarico          #+#    #+#             */
-/*   Updated: 2023/10/29 18:24:19 by almarico         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:06:18 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
-void			ft_lstadd_back(t_list **lst, t_list *new);
-void			ft_lstadd_front(t_list **lst, t_list *new);
+void			ft_lstadd_back(t_list **lst, t_list *neww);
+void			ft_lstadd_front(t_list **lst, t_list *neww);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
@@ -73,5 +73,6 @@ int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_strncmp(const char *s1, const char *s2, unsigned int n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
+int				ft_size(long long int n);
 
 #endif // !LIBFT_H

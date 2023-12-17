@@ -6,13 +6,13 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:31:48 by almarico          #+#    #+#             */
-/*   Updated: 2023/10/29 18:23:29 by almarico         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:12:26 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_size(long n)
+int	ft_size(long long int n)
 {
 	int	size;
 
@@ -22,7 +22,7 @@ static int	ft_size(long n)
 		n *= -1;
 		size++;
 	}
-	while (n > 0)
+	while (n != 0)
 	{
 		size++;
 		n /= 10;
