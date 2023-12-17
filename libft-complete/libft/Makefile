@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 15:09:47 by almarico          #+#    #+#              #
-#    Updated: 2023/10/29 18:45:12 by almarico         ###   ########.fr        #
+#    Updated: 2023/12/17 13:55:01 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ ${NAME}: ${OBJS}
 		${CC} ${CFLAGS} -Iincludes -c $< -o $@
 
 clean:
-		rm -f ${OBJS} ${BONUS_OBJS}
+		rm -f ${OBJS}
 
 fclean: clean
 		rm -f ${NAME}

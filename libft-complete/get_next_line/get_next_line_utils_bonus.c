@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:44:05 by almarico          #+#    #+#             */
-/*   Updated: 2023/11/11 20:56:35 by almarico         ###   ########.fr       */
+/*   Updated: 2023/12/17 13:39:45 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_mod_join_mfd(char *line, char *buffer)
 			return (NULL);
 		line[0] = '\0';
 	}
-	tmp = malloc((ft_mstrlen(line) + ft_mstrlen(buffer) + 1) * sizeof(char));
+	tmp = malloc((ft_mstrlen_mfd(line) + ft_mstrlen_mfd(buffer) + 1) * sizeof(char));
 	if (!tmp)
 		return (NULL);
 	i = -1;
@@ -54,7 +54,7 @@ char	*ft_mod_join_mfd(char *line, char *buffer)
 	if (buffer[j] == '\n')
 		tmp[i++] = '\n';
 	tmp[i] = '\0';
-	return (ft_test_end(tmp));
+	return (ft_test_end_mfd(tmp));
 }
 
 int	ft_mod_strchr_mfd(char *buffer)
