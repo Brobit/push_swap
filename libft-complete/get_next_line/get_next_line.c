@@ -6,11 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:41:48 by almarico          #+#    #+#             */
-/*   Updated: 2023/12/16 15:11:42 by almarico         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:03:14 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "gnl.h"
 
 char	*ft_free(char *line)
 {

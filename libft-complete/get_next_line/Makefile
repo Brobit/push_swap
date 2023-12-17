@@ -16,7 +16,7 @@ ${NAME} : ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
 %.o : %.c
-	${CC} ${CFLAGS} -I${INCLUDES} -c $< -o $@
+	${CC} ${CFLAGS} -I${INCLUDES} -c $< -o ${SRCS}
 
 clean :
 	rm -rf ${OBJS}

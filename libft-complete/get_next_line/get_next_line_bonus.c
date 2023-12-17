@@ -6,11 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:41:48 by almarico          #+#    #+#             */
-/*   Updated: 2023/12/17 13:37:58 by almarico         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:03:44 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "gnlb.h"
 
 char	*ft_free_mfd(char *line)
 {

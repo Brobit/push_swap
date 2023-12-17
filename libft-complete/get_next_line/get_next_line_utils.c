@@ -6,11 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:44:05 by almarico          #+#    #+#             */
-/*   Updated: 2023/11/11 15:57:07 by almarico         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:03:59 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "gnl.h"
 
 void	ft_cut_buffer(char *buffer)
 {
