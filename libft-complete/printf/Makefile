@@ -1,6 +1,21 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/12/18 13:39:09 by almarico          #+#    #+#              #
+#    Updated: 2023/12/18 13:52:32 by almarico         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
+
 CC = cc
+
 FLAGS = -Wall -Wextra -Werror -g
+
 SRC = ft_conflit_checker.c \
 	  ft_init.c \
 	  ft_flag_writer.c \
@@ -17,18 +32,24 @@ SRC = ft_conflit_checker.c \
 	  ft_write_pointer.c \
 	  ft_write_str.c
 
-OBJ = $(SRC:.c=.o)
+OBJ_PATH = obj/
 
-all : $(NAME)
+OBJ = ${addprefix ${OBJ_PATH}, ${SRC:.c=.o}}
+
+all : ${OBJ_PATH} ${NAME}
+
+${OBJ_PATH} :
+	mkdir ${OBJ_PATH}
 
 $(NAME) : $(OBJ)
 	ar rs $(NAME) $(OBJ)
 
-%.o : %.c
+${OBJ_PATH}%.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
 	rm -f $(OBJ)
+	rm -rf ${OBJ_PATH}
 
 fclean : clean
 	rm -f $(NAME)

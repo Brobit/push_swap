@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 15:09:47 by almarico          #+#    #+#              #
-#    Updated: 2023/12/17 14:24:15 by almarico         ###   ########.fr        #
+#    Updated: 2023/12/18 13:35:16 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,9 @@ SRCS = ft_atoi.c\
 	ft_lstnew.c\
 	ft_lstsize.c
 
-OBJS = ${SRCS:.c=.o}
+OBJ_PATH = obj/
+
+OBJS = ${addprefix ${OBJ_PATH}, ${SRCS:.c=.o}}
 
 NAME = libft.a
 
@@ -62,16 +64,20 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 CC = cc
 
-all: ${NAME}
+all: ${OBJ_PATH} ${NAME}
+
+${OBJ_PATH} :
+	mkdir ${OBJ_PATH}
 
 ${NAME}: ${OBJS}
 		ar rcs ${NAME} ${OBJS}
 
-%.o: %.c
+${OBJ_PATH}%.o: %.c
 		${CC} ${CFLAGS} -Iincludes -c $< -o $@
 
 clean:
 		rm -f ${OBJS}
+		rm -rf ${OBJ_PATH}
 
 fclean: clean
 		rm -f ${NAME}
