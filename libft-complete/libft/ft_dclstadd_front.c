@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_dclstadd_front.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:47:39 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/09 17:09:42 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/09 17:33:17 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/09 17:34:54 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_dclstadd_front(t_double_list **lst, t_double_list *neww)
 {
-	t_list			*pilou;
-
-	pilou = malloc(sizeof(t_list));
-	if (!pilou)
-		return (NULL);
-	pilou->content = content;
-	pilou->next = NULL;
-	return (pilou);
+	neww->next = *lst;
+	*lst = neww;
 }

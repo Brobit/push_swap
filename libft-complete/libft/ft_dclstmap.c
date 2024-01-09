@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_dclstmap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:47:39 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/09 17:09:42 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/09 17:41:34 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/09 17:51:10 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_double_list	*ft_dclstmap(t_double_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list			*pilou;
+	t_double_list	*content;
+	t_double_list	*begin;
 
-	pilou = malloc(sizeof(t_list));
-	if (!pilou)
+	if (!lst)
 		return (NULL);
-	pilou->content = content;
-	pilou->next = NULL;
-	return (pilou);
+	content = NULL;
+	begin = ft_dclstnew(f(lst->content));
+	lst = lst->next;
+	while (lst)
+	{
+		content = ft_dclstnew(f(lst->content));
+		if (!content)
+		{
+			ft_dclstclear(&begin, del);
+			return (NULL);
+		}
+		ft_dclstadd_back(&begin, content);
+		lst = lst->next;
+	}
+	return (begin);
 }

@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_dclstdelone.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:47:39 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/09 17:09:42 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/09 17:37:13 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/09 17:38:09 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_dclstdelone(t_double_list *lst, void (*del)(void *))
 {
-	t_list			*pilou;
-
-	pilou = malloc(sizeof(t_list));
-	if (!pilou)
-		return (NULL);
-	pilou->content = content;
-	pilou->next = NULL;
-	return (pilou);
+	del(lst->content);
+	free(lst);
 }

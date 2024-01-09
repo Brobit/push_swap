@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:27:38 by almarico          #+#    #+#             */
-/*   Updated: 2023/12/03 12:06:18 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:52:15 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,35 @@ typedef struct s_lmanipulate
 	t_list	*first;
 }				t_lmanipulate;
 
+typedef struct s_double_list
+{
+	struct s_double_list	*prev;
+	void					*content;
+	struct s_double_list	*next;
+}				t_double_list;
+
+typedef struct s_double_list_save
+{
+	t_double_list	*first;
+	t_double_list	*last;
+}				t_double_list_save;
+
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
+t_double_list	*ft_dclstnew(void *content);
+t_double_list	*ft_dclstlast(t_double_list *lst);
+t_double_list	*ft_dclstmap(t_double_list *lst, void *(*f)(void *), void (*del)(void *));
 void			*ft_memchr(const void *s, int c, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
+void			ft_dclstadd_back(t_double_list **lst, t_double_list *neww);
+void			ft_dclstadd_front(t_double_list **lst, t_double_list *neww);
+void			ft_dclstclear(t_double_list **lst, void (*del)(void *));
+void			ft_dclstdelone(t_double_list *lst, void (*del)(void *));
+void			ft_dclstiter(t_double_list *lst, void (*f)(void *));
 void			ft_lstadd_back(t_list **lst, t_list *neww);
 void			ft_lstadd_front(t_list **lst, t_list *neww);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
