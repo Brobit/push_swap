@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:27:38 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/09 17:52:15 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:43:04 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ int				ft_toupper(int c);
 int				ft_strncmp(const char *s1, const char *s2, unsigned int n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_size(long long int n);
+int				ft_count_word(char const *str, char c);
 
 #endif // !LIBFT_H

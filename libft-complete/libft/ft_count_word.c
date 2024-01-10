@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_count_word.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 12:16:04 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/10 12:53:57 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/10 12:40:08 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/10 12:42:32 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_push_swap.h"
-#include <unistd.h>
+#include "libft.h"
 
-int main(int argc, char *argv[])
+int	ft_count_word(char const *str, char c)
 {
-	argv++;
-	argc--;
-	if (argc == 0 || argc == 1)
-		ft_write_err();
+	int	count;
 
-	return EXIT_SUCCESS;
+	count = 0;
+	while (*str != '\0')
+	{
+		while (*str != c && *str != '\0')
+			str++;
+		while (*str == c && *str != '\0')
+			str++;
+		count++;
+	}
+	return (count);
 }
