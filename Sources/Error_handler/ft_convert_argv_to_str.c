@@ -6,11 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:20:04 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 14:02:52 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/12 15:57:22 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_push_swap.h"
+#include "../../Includes/ft_push_swap.h"
 
 static void	ft_fill_tab(t_param *tab, char const *s, char c, size_t *index)
 {

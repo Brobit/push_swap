@@ -6,11 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:02:11 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 15:11:40 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/12 15:56:58 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_push_swap.h"
+#include "../../Includes/ft_push_swap.h"
 
 int	ft_check_duplication(t_param *tab)
 {

@@ -6,11 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:20:51 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 15:26:04 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/12 15:57:12 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_push_swap.h"
+#include "../../Includes/ft_push_swap.h"
 
 static int	ft_is_in_table(char *str)
 {

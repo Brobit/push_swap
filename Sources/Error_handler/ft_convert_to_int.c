@@ -6,11 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:07:33 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 15:25:12 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/12 15:57:31 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_push_swap.h"
+#include "../../Includes/ft_push_swap.h"
 
 static int	ft_check_int_max_min(t_ll nb)
 {
