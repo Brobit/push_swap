@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 16:03:58 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:26:07 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ int				ft_write_err(char *err_msg);
 int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
-void			ft_convert_to_dclist(t_param *tab);
+int				ft_convert_to_dclist(t_param *tab, t_double_list **dclist_a, t_double_list_save *dclist_a_save);
 
 #endif // !FT_PUSH_SWAP_H
