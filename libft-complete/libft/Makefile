@@ -6,11 +6,12 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 15:09:47 by almarico          #+#    #+#              #
-#    Updated: 2024/01/10 12:43:39 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/12 13:57:37 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_atoi.c\
+	ft_atoll.c\
 	ft_bzero.c\
 	ft_calloc.c\
 	ft_count_word.c\

@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 12:16:04 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/11 16:35:55 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/12 13:53:33 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/12 15:22:23 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_push_swap.h"
+#include "libft.h"
 
-int main(int argc, char **argv)
+t_ll	ft_atoll(const char *string)
 {
-	t_param	tab;
+	t_ll	neg;
+	t_ll	res;
+	int	i;
 
-	argv++;
-	argc--;
-	if (!ft_error_handler(argc, argv, &tab))
-		return (EXIT_FAIL);
-
-	return EXIT_SUCCESS;
+	res = 0;
+	i = 0;
+	neg = 1;
+	while ((string[i] >= '\t' && string[i] <= '\r') || string[i] == ' ')
+		i++;
+	if (string[i] == '-' || string[i] == '+')
+	{
+		if (string[i] == '-')
+			neg *= -1;
+		i++;
+	}
+	while (string[i] >= '0' && string[i] <= '9')
+	{
+		res *= 10;
+		res += (string[i] - '0');
+		i++;
+	}
+	return (res * neg);
 }

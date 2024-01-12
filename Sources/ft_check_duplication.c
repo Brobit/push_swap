@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_handler.c                                 :+:      :+:    :+:   */
+/*   ft_check_duplication.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 12:51:29 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 15:13:44 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/12 15:02:11 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/12 15:11:40 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/ft_push_swap.h"
 
-int	ft_write_err(char *err_msg)
+int	ft_check_duplication(t_param *tab)
 {
-	write(2, &err_msg, ft_strlen(err_msg));
-	return (FUNCTION_FAIL);
-}
+	int	i;
+	int	j;
 
-int	ft_error_handler(int argc, char **argv, t_param *tab)
-{
-	if (argc == 0)
-		return (ft_write_err(ERR_MSG_NEA));
-	ft_convert_argv_to_str(argv, tab);
-	if (!ft_check_tab(tab))
-		return (ft_write_err(ERR_MSG_GENERIC));
-	if (!ft_convert_to_int(tab))
-		return (ft_write_err(ERR_MSG_GENERIC));
-	if (!ft_check_duplication(tab))
-		return (ft_write_err(ERR_MSG_GENERIC));
+	i = 0;
+	while (i < tab->size - 1)
+	{
+		j = i + 1;
+		while (j < tab->size)
+		{
+			if (tab->array[i] == tab->array[j])
+				return (ft_write_err(ERR_MSG_DUPLICATION));
+			j++;
+		}
+		i++;
+	}
 	return (FUNCTION_SUCCESS);
 }

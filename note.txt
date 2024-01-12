@@ -17,6 +17,7 @@ Push swap:
 
 - All the standard input are going into the a stack (The first param is at the top of the stack).
 
+//done
 - Take account that the arg can be a string that contain number:
 	example : "1 34 27 12 76 42"
 So need to convert it to multiple string to use it after.
@@ -25,19 +26,20 @@ So need to convert it to multiple string to use it after.
 	stack a : contain the standard input and the sorted list at the end.
 	stack b : this pile is use to do operation to sort the list.
 
+//done
 - We need to check if all the argument are correct,
 an argument is incorrect if:
 	the argument is not a number
 	the argument do an int overflow/underflow
 	the argument is duplicate
-
+//done
 - Step to check if arguments are correct:
 	split all the argument, and store them in a char **
 	check that there is only digit and sign in the arguments
 	convert every string to int
 	check if there is duplication
 if there is an error in one of this steps, write Error\n in standard error (stderr: 2)
-
+//done
 - To split the arguments
 	use count word an every argv
 	then malloc a char **
