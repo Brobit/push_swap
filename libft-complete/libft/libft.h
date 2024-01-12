@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:27:38 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 15:22:01 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/12 16:12:25 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,14 @@ void			ft_dclstadd_front(t_double_list **lst, t_double_list *neww);
 void			ft_dclstclear(t_double_list **lst, void (*del)(void *));
 void			ft_dclstdelone(t_double_list *lst, void (*del)(void *));
 void			ft_dclstiter(t_double_list *lst, void (*f)(void *));
+void			ft_dclstinit(t_double_list *list);
 void			ft_lstadd_back(t_list **lst, t_list *neww);
 void			ft_lstadd_front(t_list **lst, t_list *neww);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
+void			ft_lstinit(t_list *list);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);

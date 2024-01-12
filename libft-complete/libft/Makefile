@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 15:09:47 by almarico          #+#    #+#              #
-#    Updated: 2024/01/12 13:57:37 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/12 16:07:52 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS = ft_atoi.c\
 	ft_dclstadd_front.c\
 	ft_dclstclear.c\
 	ft_dclstdelone.c\
+	ft_dclstinit.c\
 	ft_dclstiter.c\
 	ft_dclstlast.c\
 	ft_dclstmap.c\
@@ -58,6 +59,7 @@ SRCS = ft_atoi.c\
 	ft_lstadd_front.c\
 	ft_lstclear.c\
 	ft_lstdelone.c\
+	ft_lstinit.c\
 	ft_lstiter.c\
 	ft_lstlast.c\
 	ft_lstmap.c\
