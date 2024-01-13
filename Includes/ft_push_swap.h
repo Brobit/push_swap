@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 17:26:07 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/13 17:46:04 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,18 @@ int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
 int				ft_convert_to_dclist(t_param *tab, t_double_list **dclist_a, t_double_list_save *dclist_a_save);
+
+
+void	ft_pa(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
+void	ft_pb(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
+void	ft_ra(t_double_list_save *dclist_a_save);
+void	ft_rb(t_double_list_save *dclist_b_save);
+void	ft_rr(t_double_list_save *dclist_a_save, t_double_list_save *dclist_b_save);
+void	ft_rra(t_double_list_save *dclist_a_save);
+void	ft_rrb(t_double_list_save *dclist_b_save);
+void	ft_rrr(t_double_list_save *dclist_a_save, t_double_list_save *dclist_b_save);
+void	ft_sa(t_double_list **dclist_a,t_double_list_save *dclist_a_save);
+void	ft_sb(t_double_list **dclist_a, t_double_list_save *dclist_a_save);
+void	ft_ss(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
 
 #endif // !FT_PUSH_SWAP_H

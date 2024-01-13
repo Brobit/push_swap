@@ -76,7 +76,7 @@ if there is an error in one of this steps, write Error\n in standard error (stde
 	- implement the instruction , one function for each
 	- implement the algoritm to sort the list
 		every movment of the algoritm must be on of the given instruction
-
+//done
 - Some things to do :
 		split the argument into a char **
 		count the number of char *
