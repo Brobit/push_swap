@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dclstclear.c                                    :+:      :+:    :+:   */
+/*   ft_dclstadd_front.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:35:47 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/09 17:36:47 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/09 17:33:17 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/14 13:54:54 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_dclstclear(t_double_list **lst, void (*del)(void *))
+void	ft_dllstadd_front(t_dll **lst, t_dll *neww)
 {
-	t_double_list	*nav;
-
-	while (*lst)
-	{
-		nav = (*lst)->next;
-		ft_dclstdelone(*lst, del);
-		*lst = nav;
-	}
-	free(*lst);
-	*lst = NULL;
+	neww->next = *lst;
+	*lst = neww;
 }

@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dclstadd_back.c                                 :+:      :+:    :+:   */
+/*   ft_dclstdelone.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:29:11 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/09 17:32:21 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/09 17:37:13 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/14 13:53:43 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_dclstadd_back(t_double_list **lst, t_double_list *neww)
+void	ft_dllstdelone(t_dll *lst, void (*del)(void *))
 {
-	t_double_list	*last;
-
-	last = ft_dclstlast(*lst);
-	if (last)
-		last->next = neww;
-	else
-		*lst = neww;
+	del(lst->content);
+	free(lst);
 }

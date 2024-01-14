@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dclstdelone.c                                   :+:      :+:    :+:   */
+/*   ft_dclstlast.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:37:13 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/09 17:38:09 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/09 17:40:16 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/14 13:52:35 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_dclstdelone(t_double_list *lst, void (*del)(void *))
+t_dll	*ft_dllstlast(t_dll *lst)
 {
-	del(lst->content);
-	free(lst);
+	t_dll	*last;
+
+	if (!lst)
+		return (NULL);
+	last = lst;
+	while (last->next != NULL)
+		last = last->next;
+	return (last);
 }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dclstiter.c                                     :+:      :+:    :+:   */
+/*   ft_dclstclear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:38:52 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/09 17:39:39 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/09 17:35:47 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/14 13:54:08 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_dclstiter(t_double_list *lst, void (*f)(void *))
+void	ft_dllstclear(t_dll **lst, void (*del)(void *))
 {
-	while (lst)
+	t_dll	*nav;
+
+	while (*lst)
 	{
-		f(lst->content);
-		lst = lst->next;
+		nav = (*lst)->next;
+		ft_dllstdelone(*lst, del);
+		*lst = nav;
 	}
+	free(*lst);
+	*lst = NULL;
 }

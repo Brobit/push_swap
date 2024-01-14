@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:27:38 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 16:12:25 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:51:36 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ typedef struct s_lmanipulate
 	t_list	*first;
 }				t_lmanipulate;
 
-typedef struct s_double_list
+typedef struct s_dll
 {
-	struct s_double_list	*prev;
+	struct s_dll	*prev;
 	void					*content;
-	struct s_double_list	*next;
-}				t_double_list;
+	struct s_dll	*next;
+}				t_dll;
 
-typedef struct s_double_list_save
+typedef struct s_dlls
 {
-	t_double_list	*first;
-	t_double_list	*last;
-}				t_double_list_save;
+	t_dll	*first;
+	t_dll	*last;
+}				t_dlls;
 
 typedef long long t_ll;
 
@@ -49,20 +49,20 @@ t_ll				ft_atoll(const char *string);
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
-t_double_list	*ft_dclstnew(void *content);
-t_double_list	*ft_dclstlast(t_double_list *lst);
-t_double_list	*ft_dclstmap(t_double_list *lst, void *(*f)(void *), void (*del)(void *));
+t_dll			*ft_dllstnew(void *content);
+t_dll			*ft_dllstlast(t_dll *lst);
+t_dll			*ft_dllstmap(t_dll *lst, void *(*f)(void *), void (*del)(void *));
 void			*ft_memchr(const void *s, int c, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
-void			ft_dclstadd_back(t_double_list **lst, t_double_list *neww);
-void			ft_dclstadd_front(t_double_list **lst, t_double_list *neww);
-void			ft_dclstclear(t_double_list **lst, void (*del)(void *));
-void			ft_dclstdelone(t_double_list *lst, void (*del)(void *));
-void			ft_dclstiter(t_double_list *lst, void (*f)(void *));
-void			ft_dclstinit(t_double_list *list);
+void			ft_dllstadd_back(t_dll **lst, t_dll *neww);
+void			ft_dllstadd_front(t_dll **lst, t_dll *neww);
+void			ft_dllstclear(t_dll **lst, void (*del)(void *));
+void			ft_dllstdelone(t_dll *lst, void (*del)(void *));
+void			ft_dllstiter(t_dll *lst, void (*f)(void *));
+void			ft_dllstinit(t_dll *list);
 void			ft_lstadd_back(t_list **lst, t_list *neww);
 void			ft_lstadd_front(t_list **lst, t_list *neww);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));

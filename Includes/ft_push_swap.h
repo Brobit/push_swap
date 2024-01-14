@@ -6,18 +6,17 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/13 17:46:04 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:43:55 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUSH_SWAP_H
-#define FT_PUSH_SWAP_H
+# define FT_PUSH_SWAP_H
 
 # include "../libft-complete/libft/libft.h"
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
-
 
 # define EXIT_SUCCESS				0
 # define EXIT_FAIL					1
@@ -35,11 +34,20 @@
 # define ERR_MSG_MALLOC				"The malloc action doesn't succed !!!\n"
 # define ERR_MSG_DUPLICATION		"There is duplication !!!\n"
 
-typedef struct s_param {
+typedef struct s_param
+{
 	char	**param;
 	t_ll	*array;
 	int		size;
 }				t_param;
+
+typedef struct s_get
+{
+	t_double_list		*dll_a;
+	t_double_list		*dll_b;
+	t_double_list_save	*dlls_a;
+	t_double_list_save	*dlls_b;
+}				t_get;
 
 int				ft_convert_argv_to_str(char **argv, t_param *tab);
 int				ft_convert_to_int(t_param *tab);
@@ -47,19 +55,18 @@ int				ft_write_err(char *err_msg);
 int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
-int				ft_convert_to_dclist(t_param *tab, t_double_list **dclist_a, t_double_list_save *dclist_a_save);
+int				ft_convert_to_dclist(t_param *tab, t_get *get);
 
-
-void	ft_pa(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
-void	ft_pb(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
-void	ft_ra(t_double_list_save *dclist_a_save);
-void	ft_rb(t_double_list_save *dclist_b_save);
-void	ft_rr(t_double_list_save *dclist_a_save, t_double_list_save *dclist_b_save);
-void	ft_rra(t_double_list_save *dclist_a_save);
-void	ft_rrb(t_double_list_save *dclist_b_save);
-void	ft_rrr(t_double_list_save *dclist_a_save, t_double_list_save *dclist_b_save);
-void	ft_sa(t_double_list **dclist_a,t_double_list_save *dclist_a_save);
-void	ft_sb(t_double_list **dclist_a, t_double_list_save *dclist_a_save);
-void	ft_ss(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
+void			ft_pa(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
+void			ft_pb(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
+void			ft_ra(t_double_list_save *dclist_a_save);
+void			ft_rb(t_double_list_save *dclist_b_save);
+void			ft_rr(t_double_list_save *dclist_a_save, t_double_list_save *dclist_b_save);
+void			ft_rra(t_double_list_save *dclist_a_save);
+void			ft_rrb(t_double_list_save *dclist_b_save);
+void			ft_rrr(t_double_list_save *dclist_a_save, t_double_list_save *dclist_b_save);
+void			ft_sa(t_double_list **dclist_a,t_double_list_save *dclist_a_save);
+void			ft_sb(t_double_list **dclist_a, t_double_list_save *dclist_a_save);
+void			ft_ss(t_double_list **dclist_b, t_double_list **dclist_a, t_double_list_save *dclist_b_save, t_double_list_save *dclist_a_save);
 
 #endif // !FT_PUSH_SWAP_H
