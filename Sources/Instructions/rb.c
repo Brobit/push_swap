@@ -6,13 +6,13 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:14:31 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/13 17:41:05 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/15 09:54:12 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_push_swap.h"
 
-void	ft_rb(t_double_list_save *dclist_b_save)
+void	ft_rb(t_get *get)
 {
 
 }

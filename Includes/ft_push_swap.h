@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/14 15:21:08 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/15 09:59:01 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,18 @@ int				ft_write_err(char *err_msg);
 int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
-int				ft_convert_to_dclist(t_param *tab, t_get **get);
+int				ft_convert_to_dclist(t_param *tab, t_get *get);
 
-void			ft_pa(t_dll **dclist_b, t_dll **dclist_a, t_dlls *dclist_b_save, t_dlls *dclist_a_save);
-void			ft_pb(t_dll **dclist_b, t_dll **dclist_a, t_dlls *dclist_b_save, t_dlls *dclist_a_save);
-void			ft_ra(t_dlls *dclist_a_save);
-void			ft_rb(t_dlls *dclist_b_save);
-void			ft_rr(t_dlls *dclist_a_save, t_dlls *dclist_b_save);
-void			ft_rra(t_dlls *dclist_a_save);
-void			ft_rrb(t_dlls *dclist_b_save);
-void			ft_rrr(t_dlls *dclist_a_save, t_dlls *dclist_b_save);
-void			ft_sa(t_dll **dclist_a,t_dlls *dclist_a_save);
-void			ft_sb(t_dll **dclist_a, t_dlls *dclist_a_save);
-void			ft_ss(t_dll **dclist_b, t_dll **dclist_a, t_dlls *dclist_b_save, t_dlls *dclist_a_save);
+void			ft_pa(t_get *get);
+void			ft_pb(t_get *get);
+void			ft_ra(t_get *get);
+void			ft_rb(t_get *get);
+void			ft_rr(t_get *get);
+void			ft_rra(t_get *get);
+void			ft_rrb(t_get *get);
+void			ft_rrr(t_get *get);
+void			ft_sa(t_get *get);
+void			ft_sb(t_get *get);
+void			ft_ss(t_get *get);
 
 #endif // !FT_PUSH_SWAP_H
