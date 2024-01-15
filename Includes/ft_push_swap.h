@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/15 09:59:01 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/15 12:31:08 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ typedef struct s_get
 {
 	t_dll		*dll_a;
 	t_dll		*dll_b;
-	t_dlls		*dlls_a;
-	t_dlls		*dlls_b;
 }				t_get;
 
 int				ft_convert_argv_to_str(char **argv, t_param *tab);

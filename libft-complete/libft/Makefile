@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 15:09:47 by almarico          #+#    #+#              #
-#    Updated: 2024/01/14 13:59:26 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/15 12:52:25 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,15 +15,6 @@ SRCS = ft_atoi.c\
 	ft_bzero.c\
 	ft_calloc.c\
 	ft_count_word.c\
-	ft_dllstadd_back.c\
-	ft_dllstadd_front.c\
-	ft_dllstclear.c\
-	ft_dllstdelone.c\
-	ft_dllstinit.c\
-	ft_dllstiter.c\
-	ft_dllstlast.c\
-	ft_dllstmap.c\
-	ft_dllstnew.c\
 	ft_isalnum.c\
 	ft_isalpha.c\
 	ft_isascii.c\
