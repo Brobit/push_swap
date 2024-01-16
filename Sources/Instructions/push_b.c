@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 17:15:11 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/15 09:55:31 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/13 17:14:01 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/16 14:45:40 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_push_swap.h"
 
-void	ft_rrr(t_get *get)
+void	ft_push_b(t_get *get)
 {
+	t_list	tmp;
 
+	tmp.content = get->stack_b->content;
+	tmp.next = NULL;
+	ft_lstadd_front(&get->stack_a, &tmp);
+	get->stack_b = get->stack_b->next;
 }

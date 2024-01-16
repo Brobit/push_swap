@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/15 12:31:08 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:45:07 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define ERR_MSG_MALLOC				"The malloc action doesn't succed !!!\n"
 # define ERR_MSG_DUPLICATION		"There is duplication !!!\n"
 
+/* Stucture for the error handler */
 typedef struct s_param
 {
 	char	**param;
@@ -41,30 +42,35 @@ typedef struct s_param
 	int		size;
 }				t_param;
 
+/* Stack access */
 typedef struct s_get
 {
-	t_dll		*dll_a;
-	t_dll		*dll_b;
+	t_list		*stack_a;
+	t_list		*stack_b;
 }				t_get;
 
+/* Error handler */
 int				ft_convert_argv_to_str(char **argv, t_param *tab);
 int				ft_convert_to_int(t_param *tab);
 int				ft_write_err(char *err_msg);
 int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
-int				ft_convert_to_dclist(t_param *tab, t_get *get);
 
-void			ft_pa(t_get *get);
-void			ft_pb(t_get *get);
-void			ft_ra(t_get *get);
-void			ft_rb(t_get *get);
-void			ft_rr(t_get *get);
-void			ft_rra(t_get *get);
-void			ft_rrb(t_get *get);
-void			ft_rrr(t_get *get);
-void			ft_sa(t_get *get);
-void			ft_sb(t_get *get);
-void			ft_ss(t_get *get);
+/* Convertsion to list */
+int				ft_convert_to_list(t_param *tab, t_get *get);
+
+/* Instruction set */
+void			ft_push_a(t_get *get);
+void			ft_push_b(t_get *get);
+void			ft_rotate_a(t_get *get);
+void			ft_rotate_b(t_get *get);
+void			ft_rotate_a_b(t_get *get);
+void			ft_reverse_rotate_a(t_get *get);
+void			ft_reverse_rotate_b(t_get *get);
+void			ft_reverse_rotate_a_b(t_get *get);
+void			ft_swap_a(t_get *get);
+void			ft_swap_b(t_get *get);
+void			ft_swap_a_b(t_get *get);
 
 #endif // !FT_PUSH_SWAP_H

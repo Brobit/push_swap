@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   reverse_rotate_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 17:14:51 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/15 09:54:46 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/13 17:15:01 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/16 14:46:27 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_push_swap.h"
 
-void	ft_rra(t_get *get)
+void	ft_reverse_rotate_b(t_get *get)
 {
 
 }
