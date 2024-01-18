@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/16 17:16:14 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:23:58 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ void			ft_rotate_a_b(t_get *get);
 void			ft_swap_a(t_get *get);
 void			ft_swap_b(t_get *get);
 void			ft_swap_a_b(t_get *get);
-int				ft_reverse_rotate_a(t_get *get);
-int				ft_reverse_rotate_b(t_get *get);
-int				ft_reverse_rotate_a_b(t_get *get);
+void			ft_reverse_rotate_a(t_get *get);
+void			ft_reverse_rotate_b(t_get *get);
+void			ft_reverse_rotate_a_b(t_get *get);
 
 #endif // !FT_PUSH_SWAP_H

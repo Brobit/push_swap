@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:16:21 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/16 14:47:36 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:25:27 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_swap_a_b(t_get *get)
 {
-
+	ft_swap_a(get);
+	ft_swap_b(get);
 }
