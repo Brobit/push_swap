@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/01/20 13:07:54 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/20 13:50:24 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,14 +34,26 @@ SRC = ./Sources/Error_handler/ft_check_tab.c\
 	  ./Sources/List/ft_convert_to_list.c\
 	  ./Sources/main.c
 
-all : ${NAME}
+OBJ_PATH = obj/
 
-${NAME} :
+OBJ = ${addprefix ${OBJ_PATH}, ${SRC:.c=.o}}
+
+all : ${OBJ_PATH} ${NAME}
+
+${OBJ_PATH} :
+	mkdir ${OBJ_PATH}
+
+${NAME} : ${OBJ}
 	${MAKE} -C $$(dirname ${LIBFT_COMPLETE})
-	${CC} ${CFLAGS} ${SRC} ${LIBFT_COMPLETE} ${INCLUDES} -o $@
+	${CC} ${CFLAGS} ${OBJ} ${LIBFT_COMPLETE} ${INCLUDES} -o $@
+
+${OBJ_PATH}%.o : %.c
+	${CC} ${FLAGS} -c $< -o $@
 
 clean :
 	${MAKE} clean -C $$(dirname ${LIBFT_COMPLETE})
+	${RM} -f ${OBJ}
+	${RM} -rf ${OBJ_PATH}
 
 fclean : clean
 	${MAKE} fclean -C $$(dirname ${LIBFT_COMPLETE})
