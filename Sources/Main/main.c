@@ -6,11 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:16:04 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/20 13:30:51 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/20 14:29:08 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_push_swap.h"
+#include "../../Includes/ft_push_swap.h"
 
 int main(int argc, char **argv)
 {
