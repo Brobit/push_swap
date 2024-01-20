@@ -19,8 +19,8 @@ ${LIB_LIBFT} :
 
 clean :
 	${MAKE} clean -C $$(dirname ${LIB_PRINTF});
-	$(MAKE) clean -C $$(dirname ${LIB_GNL});
-	$(MAKE) clean -C $$(dirname ${LIB_LIBFT});
+	${MAKE} clean -C $$(dirname ${LIB_GNL});
+	${MAKE} clean -C $$(dirname ${LIB_LIBFT});
 
 fclean : clean
 	${RM} ${LIB_PRINTF} ${LIB_GNL} ${LIB_LIBFT} ${NAME}

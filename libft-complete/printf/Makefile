@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 13:39:09 by almarico          #+#    #+#              #
-#    Updated: 2023/12/18 13:52:32 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/20 11:54:21 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,18 +41,18 @@ all : ${OBJ_PATH} ${NAME}
 ${OBJ_PATH} :
 	mkdir ${OBJ_PATH}
 
-$(NAME) : $(OBJ)
-	ar rs $(NAME) $(OBJ)
+${NAME} : ${OBJ}
+	ar rs ${NAME} ${OBJ}
 
 ${OBJ_PATH}%.o : %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	${CC} ${FLAGS} -c $< -o $@
 
 clean :
-	rm -f $(OBJ)
+	rm -f ${OBJ}
 	rm -rf ${OBJ_PATH}
 
 fclean : clean
-	rm -f $(NAME)
+	rm -f ${NAME}
 
 re : fclean all
 
