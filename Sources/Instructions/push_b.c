@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:14:01 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/18 11:31:28 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/20 12:18:28 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_push_b(t_get *get)
 {
 	t_list	*tmp;
 
+	tmp = get->stack_b;
 	tmp->content = get->stack_b->content;
 	tmp->next = NULL;
 	ft_lstadd_front(&get->stack_a, tmp);
