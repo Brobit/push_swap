@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/01/20 12:12:48 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/20 13:07:54 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ clean :
 	${MAKE} clean -C $$(dirname ${LIBFT_COMPLETE})
 
 fclean : clean
-	${RM} ${LIBFT_COMPLETE} ${NAME}
+	${MAKE} fclean -C $$(dirname ${LIBFT_COMPLETE})
+	${RM} ${NAME}
 
 re : fclean all
 
