@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:07:33 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 15:57:31 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/21 13:07:05 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	ft_check_int_max_min(t_ll nb)
 {
 	if (nb < INT_MIN)
-		return ft_write_err(ERR_MSG_UNDERFLOW);
+		return (ft_write_err(ERR_MSG_UNDERFLOW));
 	if (nb > INT_MAX)
 		return (ft_write_err(ERR_MSG_OVERFLOW));
 	return (FUNCTION_SUCCESS);

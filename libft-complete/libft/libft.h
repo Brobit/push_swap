@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:27:38 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/15 12:52:03 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/21 12:41:05 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define INT_MAX					2147483647
+# define INT_MIN					-2147483648
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:20:04 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/12 15:57:22 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/21 12:35:34 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_convert_argv_to_str(char **argv, t_param *tab)
 	i = 0;
 	while (argv[i])
 		tab->size += ft_count_word(argv[i++], ' ');
-	tab->param = malloc(tab->size * sizeof(char *));
+	tab->param = malloc((tab->size + 1) * sizeof(char *));
 	if (!tab->param)
 		return (ft_write_err(ERR_MSG_MALLOC));
 	tab->param[tab->size] = NULL;

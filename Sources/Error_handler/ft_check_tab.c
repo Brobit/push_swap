@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:20:51 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/21 11:47:08 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/21 13:06:44 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,5 @@ int	ft_check_tab(t_param *tab)
 			return (FUNCTION_FAIL);
 		index++;
 	}
-
 	return (FUNCTION_SUCCESS);
 }
