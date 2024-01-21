@@ -6,11 +6,13 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/01/21 11:09:16 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/21 15:22:26 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+
+NAME_CHECKER = checker
 
 CC = cc
 
@@ -20,7 +22,7 @@ LIBFT_COMPLETE = ./libft-complete/libft_complete.a
 
 INCLUDES = -I ./Includes/
 
-SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
+COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/Error_handler/ft_check_duplication.c\
 	  ./Sources/Error_handler/ft_convert_to_int.c\
 	  ./Sources/Error_handler/ft_error_handler.c\
@@ -36,28 +38,33 @@ SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/Instructions/swap_a_b.c\
 	  ./Sources/Instructions/push_a.c\
 	  ./Sources/Instructions/push_b.c\
-	  ./Sources/List/ft_convert_to_list.c\
-	  ./Sources/Main/main.c
+	  ./Sources/List/ft_convert_to_list.c
 
+PUSH_SWAP_SRC = ./Sources/Main/push_swap.c
+
+CHECKER_SRC = ./Sources/Main/checker.c
 
 all : ${NAME}
 
+bonus : ${NAME_CHECKER}
 
-${NAME} :
+${NAME} : ${LIBFT_COMPLETE}
+	${CC} ${CFLAGS} ${COMMON_SRC} ${PUSH_SWAP_SRC} ${LIBFT_COMPLETE} ${INCLUDES} -o $@
+
+${NAME_CHECKER} : ${LIBFT_COMPLETE}
+	${CC} ${CFLAGS} ${COMMON_SRC} ${CHECKER_SRC} ${LIBFT_COMPLETE} ${INCLUDES} -o $@
+
+${LIBFT_COMPLETE} :
 	${MAKE} -C $$(dirname ${LIBFT_COMPLETE})
-	${CC} ${CFLAGS} ${SRC} ${LIBFT_COMPLETE} ${INCLUDES} -o $@
-
 
 clean :
 	${MAKE} clean -C $$(dirname ${LIBFT_COMPLETE})
 
-
 fclean : clean
 	${MAKE} fclean -C $$(dirname ${LIBFT_COMPLETE})
 	${RM} ${NAME}
-
+	${RM} ${NAME_CHECKER}
 
 re : fclean all
 
-
-.PHONY : all clean fclean re
+.PHONY : all bonus clean fclean re
