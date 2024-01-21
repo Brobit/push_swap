@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/18 11:23:58 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/21 11:43:17 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@
 # define ERR_MSG_OVERFLOW			"Oupsi, this error is due to an int overflow !!!\n"
 # define ERR_MSG_MALLOC				"The malloc action doesn't succed !!!\n"
 # define ERR_MSG_DUPLICATION		"There is duplication !!!\n"
+# define ERR_MSG_MULTIPLE_SIGN		"There is more than two '+' or '-' sign\n"
+# define OK_MSG						"Damn you're a big boy there is no error !!!\n"
+# define STDIN						0
+# define STDOUT						1
+# define STDERR						2
 
 /* Stucture for the error handler */
 typedef struct s_param

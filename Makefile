@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/01/21 11:05:49 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/21 11:09:16 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ all : ${NAME}
 
 ${NAME} :
 	${MAKE} -C $$(dirname ${LIBFT_COMPLETE})
-	${CC} ${CFLAGS} ${LIBFT_COMPLETE} ${SRC} ${INCLUDES} -o $@
+	${CC} ${CFLAGS} ${SRC} ${LIBFT_COMPLETE} ${INCLUDES} -o $@
 
 
 clean :
