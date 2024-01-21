@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/21 13:19:06 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/21 13:27:07 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@
 # define INT_MIN					-2147483648
 # define TABLE						"+-0123456789"
 # define ERR_MSG_NEA				"Please enter some value to sort them,\
-	at least two !!!\n"
+at least two !!!\n"
 # define ERR_MSG_GENERIC			"It's an error !!!\n"
 # define ERR_MSG_BAD_CHAR			"Invalid argument : There is a character that \
-	is neither a sign (+-) or a digit (0123456789) !!!\n"
-# define ERR_MSG_UNDERFLOW			"Oupsi, this error is due to an int\
-	underflow !!!\n"
-# define ERR_MSG_OVERFLOW			"Oupsi, this error is due to an int\
-	overflow !!!\n"
+is neither a sign (+-) or a digit (0123456789) !!!\n"
+# define ERR_MSG_UNDERFLOW			"Oupsi, this error is due to an int \
+underflow !!!\n"
+# define ERR_MSG_OVERFLOW			"Oupsi, this error is due to an int \
+overflow !!!\n"
 # define ERR_MSG_MALLOC				"The malloc action doesn't succed !!!\n"
 # define ERR_MSG_DUPLICATION		"There is duplication !!!\n"
 # define ERR_MSG_MULTIPLE_SIGN		"There is more than two '+' or '-' sign\n"
 # define OK_MSG						"Damn you're a big boy there is\
-	no error !!!\n"
+no error !!!\n"
 # define STDIN						0
 # define STDOUT						1
 # define STDERR						2
