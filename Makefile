@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/01/21 15:22:26 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/22 13:55:55 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 LIBFT_COMPLETE = ./libft-complete/libft_complete.a
 
-INCLUDES = -I ./Includes/
+INCLUDES = -I ./Includes/ft_push_swap.h
+
+CHECKER_INCLUDES = -I ./Includes/checker.h
 
 COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/Error_handler/ft_check_duplication.c\
@@ -42,7 +44,8 @@ COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 
 PUSH_SWAP_SRC = ./Sources/Main/push_swap.c
 
-CHECKER_SRC = ./Sources/Main/checker.c
+CHECKER_SRC = ./Sources/Main/checker.c\
+			  ./Sources/Stdin_listener/ft_stdin_listener.c
 
 all : ${NAME}
 

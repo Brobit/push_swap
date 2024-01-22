@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_stdin_listener.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 11:44:03 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/22 13:40:21 by almarico         ###   ########.fr       */
+/*   Created: 2024/01/22 12:29:13 by almarico          #+#    #+#             */
+/*   Updated: 2024/01/22 13:54:12 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../Includes/checker.h"
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_stdin_listener(t_stdin *the)
 {
-	char	*tmp;
-	size_t	i;
-	size_t	j;
+	char	*buf;
 
-	tmp = malloc((ft_strlen(dest) + ft_strlen(src) + 1) * sizeof(char));
-	if (!tmp)
-		return (NULL);
-	i = -1;
-	while (dest[++i])
-		tmp[i] = dest[i];
-	free(dest);
-	j = -1;
-	while (src[j])
-		tmp[i++] = src[j++];
-	tmp[i] = '\0';
-	return (tmp);
+	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buf)
+		return ;
+	while (read(STDIN, buf, BUFFER_SIZE) != EOT)
+		write(1, "salut\n", 6);
 }
