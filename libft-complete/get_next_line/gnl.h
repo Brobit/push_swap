@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:42:04 by almarico          #+#    #+#             */
-/*   Updated: 2023/12/17 14:02:32 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:22:56 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 255
 
 # endif // !BUFFER_SIZE
 

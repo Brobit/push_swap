@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:27:38 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/22 11:56:10 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:21:00 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_lmanipulate
 	t_list	*first;
 }				t_lmanipulate;
 
-typedef long long t_ll;
+typedef long long	t_ll;
 
 t_ll			ft_atoll(const char *string);
 t_list			*ft_lstnew(void *content);
@@ -66,7 +66,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char			*ft_strcat(char *dest, char *src);
+char			*ft_strcat(char *dest, const char *src);
 size_t			ft_strlen(const char *s);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);

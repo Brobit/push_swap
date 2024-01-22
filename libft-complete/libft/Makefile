@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 15:09:47 by almarico          #+#    #+#              #
-#    Updated: 2024/01/22 11:59:13 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/22 15:21:23 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,6 @@ SRCS = ./ft_atoi.c\
 	./ft_putnbr_fd.c\
 	./ft_putstr_fd.c\
 	./ft_split.c\
-	./ft_strcat\
 	./ft_strchr.c\
 	./ft_strdup.c\
 	./ft_striteri.c\

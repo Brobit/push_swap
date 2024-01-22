@@ -6,19 +6,21 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 16:58:39 by almarico          #+#    #+#             */
-/*   Updated: 2023/10/29 18:27:44 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:17:43 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int	len_dest;
 	int	i;
 
 	len_dest = ft_strlen(dest);
 	i = 0;
+	if (!src)
+		return (dest);
 	while (src[i])
 	{
 		dest[len_dest + i] = src[i];

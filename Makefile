@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/01/22 13:55:55 by almarico         ###   ########.fr        #
+#    Updated: 2024/01/22 16:04:48 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 LIBFT_COMPLETE = ./libft-complete/libft_complete.a
 
-INCLUDES = -I ./Includes/ft_push_swap.h
+INCLUDES = -I ./Includes/
 
-CHECKER_INCLUDES = -I ./Includes/checker.h
+CHECKER_INCLUDES = -I ./Includes/
 
 COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/Error_handler/ft_check_duplication.c\
@@ -55,7 +55,7 @@ ${NAME} : ${LIBFT_COMPLETE}
 	${CC} ${CFLAGS} ${COMMON_SRC} ${PUSH_SWAP_SRC} ${LIBFT_COMPLETE} ${INCLUDES} -o $@
 
 ${NAME_CHECKER} : ${LIBFT_COMPLETE}
-	${CC} ${CFLAGS} ${COMMON_SRC} ${CHECKER_SRC} ${LIBFT_COMPLETE} ${INCLUDES} -o $@
+	${CC} ${CFLAGS} ${COMMON_SRC} ${CHECKER_SRC} ${LIBFT_COMPLETE} ${CHECKER_INCLUDES} -o $@
 
 ${LIBFT_COMPLETE} :
 	${MAKE} -C $$(dirname ${LIBFT_COMPLETE})
@@ -70,4 +70,6 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all bonus clean fclean re
+re-bonus : fclean bonus
+
+.PHONY : all bonus clean fclean re re-bonus
