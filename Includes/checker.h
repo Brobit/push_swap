@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/22 17:36:06 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/13 10:15:42 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,24 @@ overflow !!!\n"
 # define ERR_MSG_MALLOC				"The malloc action doesn't succed !!!\n"
 # define ERR_MSG_DUPLICATION		"There is duplication !!!\n"
 # define ERR_MSG_MULTIPLE_SIGN		"There is more than two '+' or '-' sign\n"
+# define ERR_MSG_INSTRUCTION		"Sorry but you put a string that is not an \
+instruction :/ !!!\n"
 # define OK_MSG						"Damn you're a big boy there is\
 no error !!!\n"
 # define STDIN						0
 # define STDOUT						1
 # define STDERR						2
-# define EOT						'\x04'
+# define PA							"pa\n"
+# define PB							"pb\n"
+# define SA							"sa\n"
+# define SB							"sb\n"
+# define SAB						"ss\n"
+# define RA							"ra\n"
+# define RB							"rb\n"
+# define RAB						"rr\n"
+# define RRA						"rra\n"
+# define RRB						"rrb\n"
+# define RRAB						"rrr\n"
 
 /* Stucture for the error handler */
 typedef struct s_param
@@ -63,7 +75,7 @@ typedef struct s_get
 typedef struct s_stdin
 {
 	char	*tab;
-	char	**instruction;
+	int		*instruction;
 }				t_stdin;
 
 /* Error handler */
@@ -91,6 +103,9 @@ void			ft_reverse_rotate_b(t_get *get);
 void			ft_reverse_rotate_a_b(t_get *get);
 
 /* Listening to stdin */
-void			ft_stdin_listener(t_stdin *the);
+int				ft_stdin_listener(t_stdin *the, t_get *get);
+
+/* checker function */
+int				ft_check_instructions(char *tab, t_get *get);
 
 #endif // !FT_PUSH_SWAP_H

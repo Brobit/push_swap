@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/22 15:34:40 by almarico         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:15:38 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,17 @@ no error !!!\n"
 # define STDIN						0
 # define STDOUT						1
 # define STDERR						2
+# define PA							1
+# define PB							2
+# define SA							3
+# define SB							4
+# define SAB						5
+# define RA							6
+# define RB							7
+# define RAB						8
+# define RRA						9
+# define RRB						10
+# define RRAB						11
 
 /* Stucture for the error handler */
 typedef struct s_param

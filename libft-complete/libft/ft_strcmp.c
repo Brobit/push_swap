@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdin_listener.c                                :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 12:29:13 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/13 11:45:38 by almarico         ###   ########.fr       */
+/*   Created: 2024/02/13 11:33:12 by almarico          #+#    #+#             */
+/*   Updated: 2024/02/13 11:37:47 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Includes/checker.h"
+#include "./libft.h"
 
-int	ft_stdin_listener(t_stdin *the, t_get *get)
+int	ft_strcmp(char *s1, char *s2)
 {
-	the->tab = NULL;
-	the->instruction = NULL;
-	the->tab = get_next_line(STDIN);
-	while (the->tab != NULL)
-	{
-		if (!ft_check_instructions(the->tab, get))
-			return (ft_write_err(ERR_MSG_INSTRUCTION));
-		write(STDOUT, the->tab, ft_strlen(the->tab));
-		the->tab = get_next_line(STDIN);
-	}
-	return (FUNCTION_SUCCESS);
+	int	i;
+
+	i = 0;
+	while ((s1[i] == s2[i]) && (s1[i] || s2[i]))
+		i++;
+	return (s1[i] - s2[i]);
 }
