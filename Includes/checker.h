@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/13 10:15:42 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:17:16 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ overflow !!!\n"
 # define ERR_MSG_MULTIPLE_SIGN		"There is more than two '+' or '-' sign\n"
 # define ERR_MSG_INSTRUCTION		"Sorry but you put a string that is not an \
 instruction :/ !!!\n"
+# define ERR_LIST_NOT_SORTED		"Sorry but the list was not sorted"
 # define OK_MSG						"Damn you're a big boy there is\
 no error !!!\n"
 # define STDIN						0
@@ -82,12 +83,14 @@ typedef struct s_stdin
 int				ft_convert_argv_to_str(char **argv, t_param *tab);
 int				ft_convert_to_int(t_param *tab);
 int				ft_write_err(char *err_msg);
+int				ft_write_no_err(char *nice_msg);
 int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
 
-/* Convertsion to list */
+/* Convertsion to list & check if list is sort*/
 int				ft_convert_to_list(t_param *tab, t_get *get);
+int				ft_check_list_is_sorted(t_get *get);
 
 /* Instruction set */
 void			ft_push_a(t_get *get);

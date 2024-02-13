@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:51:29 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/21 11:34:51 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:14:12 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_write_err(char *err_msg)
 
 int	ft_write_no_err(char *nice_msg)
 {
-	write(STDERR, nice_msg, ft_strlen(nice_msg));
+	write(STDOUT, nice_msg, ft_strlen(nice_msg));
 	return (FUNCTION_SUCCESS);
 }
 

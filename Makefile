@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/01/22 16:04:48 by almarico         ###   ########.fr        #
+#    Updated: 2024/02/13 12:11:10 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,9 @@ COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 PUSH_SWAP_SRC = ./Sources/Main/push_swap.c
 
 CHECKER_SRC = ./Sources/Main/checker.c\
-			  ./Sources/Stdin_listener/ft_stdin_listener.c
+			  ./Sources/Stdin_listener/ft_stdin_listener.c\
+			  ./Sources/Stdin_listener/ft_check_instructions.c\
+			  ./Sources/List/ft_check_list_is_sorted.c\
 
 all : ${NAME}
 

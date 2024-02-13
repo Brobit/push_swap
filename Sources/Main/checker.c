@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:23:14 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/13 10:14:28 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:18:39 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,12 @@ int	main(int argc, char **argv)
 		return (EXIT_FAIL);
 	if (!ft_stdin_listener(&the, &get))
 		return (EXIT_FAIL);
+	if (!ft_check_list_is_sorted(&get))
+	{
+		ft_write_no_err("KO\n");
+		return (EXIT_FAIL);
+	}
+	else
+		ft_write_no_err("OK\n");
 	return (EXIT_SUCCESS);
 }
