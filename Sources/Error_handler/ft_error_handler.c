@@ -6,11 +6,30 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:51:29 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/13 12:14:12 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/15 21:10:49 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_push_swap.h"
+#include <stdio.h>
+
+void	ft_debug(t_get *get)
+{
+	t_lst	*tmp;
+
+	tmp = get->stack_a;
+	while (tmp != NULL)
+	{
+		printf("%d->", tmp->content);
+		tmp = tmp->next;
+	}
+	tmp = get->stack_b;
+	while (tmp != NULL)
+	{
+		printf("%d->", tmp->content);
+		tmp = tmp->next;
+	}
+}
 
 int	ft_write_err(char *err_msg)
 {

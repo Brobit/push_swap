@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/13 12:17:16 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/15 21:07:04 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ overflow !!!\n"
 # define ERR_MSG_MULTIPLE_SIGN		"There is more than two '+' or '-' sign\n"
 # define ERR_MSG_INSTRUCTION		"Sorry but you put a string that is not an \
 instruction :/ !!!\n"
-# define ERR_LIST_NOT_SORTED		"Sorry but the list was not sorted"
+# define ERR_LIST_NOT_SORTED		"Sorry but the list was not sorted\n"
 # define OK_MSG						"Damn you're a big boy there is\
 no error !!!\n"
 # define STDIN						0
@@ -66,17 +66,23 @@ typedef struct s_param
 	int		size;
 }				t_param;
 
+/* Structure for list */
+typedef struct s_lst
+{
+	int				content;
+	struct s_lst	*next;
+}				t_lst;
+
 /* Stack access */
 typedef struct s_get
 {
-	t_list		*stack_a;
-	t_list		*stack_b;
+	t_lst		*stack_a;
+	t_lst		*stack_b;
 }				t_get;
 
 typedef struct s_stdin
 {
-	char	*tab;
-	int		*instruction;
+	char		*tab;
 }				t_stdin;
 
 /* Error handler */
@@ -87,6 +93,7 @@ int				ft_write_no_err(char *nice_msg);
 int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
+/* void			ft_debug(t_get *get); */
 
 /* Convertsion to list & check if list is sort*/
 int				ft_convert_to_list(t_param *tab, t_get *get);

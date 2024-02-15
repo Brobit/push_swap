@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:43:08 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/14 12:08:57 by almarico         ###   ########.fr       */
+/*   Created: 2023/10/28 11:48:18 by almarico          #+#    #+#             */
+/*   Updated: 2024/02/15 21:44:44 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../Includes/ft_push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+int	ft_lstsize_int(t_lst *lst)
 {
-	t_list	*nav;
+	t_lst	*nav;
+	int		count;
 
-	while (*lst)
+	nav = lst;
+	count = 0;
+	while (nav)
 	{
-		nav = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = nav;
+		count++;
+		nav = nav->next;
 	}
-	free(*lst);
-	*lst = NULL;
+	return (count);
 }

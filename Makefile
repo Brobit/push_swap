@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/02/13 12:11:10 by almarico         ###   ########.fr        #
+#    Updated: 2024/02/15 21:54:53 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,14 +40,23 @@ COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/Instructions/swap_a_b.c\
 	  ./Sources/Instructions/push_a.c\
 	  ./Sources/Instructions/push_b.c\
-	  ./Sources/List/ft_convert_to_list.c
+	  ./Sources/List/ft_convert_to_list.c\
+	  ./Sources/List/ft_check_list_is_sorted.c\
+	  ./Sources/List/ft_lstmap_int.c\
+	  ./Sources/List/ft_lstnew_int.c\
+	  ./Sources/List/ft_lstiter_int.c\
+	  ./Sources/List/ft_lstlast_int.c\
+	  ./Sources/List/ft_lstsize_int.c\
+	  ./Sources/List/ft_lstclear_int.c\
+	  ./Sources/List/ft_lstdelone_int.c\
+	  ./Sources/List/ft_lstadd_back_int.c\
+	  ./Sources/List/ft_lstadd_front_int.c
 
 PUSH_SWAP_SRC = ./Sources/Main/push_swap.c
 
 CHECKER_SRC = ./Sources/Main/checker.c\
 			  ./Sources/Stdin_listener/ft_stdin_listener.c\
 			  ./Sources/Stdin_listener/ft_check_instructions.c\
-			  ./Sources/List/ft_check_list_is_sorted.c\
 
 all : ${NAME}
 

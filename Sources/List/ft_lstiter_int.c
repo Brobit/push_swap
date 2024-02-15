@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:43:08 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/14 12:08:57 by almarico         ###   ########.fr       */
+/*   Created: 2023/10/28 11:44:32 by almarico          #+#    #+#             */
+/*   Updated: 2024/02/15 21:41:40 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../Includes/ft_push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter_int(t_lst *lst, void (*f)(int))
 {
-	t_list	*nav;
-
-	while (*lst)
+	while (lst)
 	{
-		nav = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = nav;
+		f(lst->content);
+		lst = lst->next;
 	}
-	free(*lst);
-	*lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/23 14:15:38 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/15 21:52:01 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,43 @@ typedef struct s_param
 	int		size;
 }				t_param;
 
+/* Structure for list */
+typedef struct s_lst
+{
+	int				content;
+	struct s_lst	*next;
+}				t_lst;
+
 /* Stack access */
 typedef struct s_get
 {
-	t_list		*stack_a;
-	t_list		*stack_b;
+	t_lst		*stack_a;
+	t_lst		*stack_b;
 }				t_get;
 
 /* Error handler */
 int				ft_convert_argv_to_str(char **argv, t_param *tab);
 int				ft_convert_to_int(t_param *tab);
 int				ft_write_err(char *err_msg);
+int				ft_write_no_err(char *nice_msg);
 int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
 
 /* Convertsion to list */
 int				ft_convert_to_list(t_param *tab, t_get *get);
+
+/* List function */
+
+void			ft_lstadd_back_int(t_lst **lst, t_lst *neww);
+void			ft_lstadd_front_int(t_lst **lst, t_lst *neww);
+void			ft_lstclear_int(t_lst **lst, void (*del)(int));
+void			ft_lstdelone_int(t_lst *lst, void (*del)(int));
+void			ft_lstiter_int(t_lst *lst, void (*f)(int));
+t_lst			*ft_lstlast_int(t_lst *lst);
+t_lst			*ft_lstmap_int(t_lst *lst, int (*f)(int), void (*del)(int));
+t_lst			*ft_lstnew_int(int content);
+int				ft_lstsize_int(t_lst *lst);
 
 /* Instruction set */
 void			ft_push_a(t_get *get);

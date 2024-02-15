@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:14:51 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/21 13:07:27 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/15 22:00:26 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_reverse_rotate_a(t_get *get)
 {
-	t_list	*tmp;
-	t_list	*second_last;
+	t_lst	*tmp;
+	t_lst	*second_last;
 
 	if (get->stack_a == NULL || get->stack_a->next == NULL)
 		return ;
@@ -27,5 +27,5 @@ void	ft_reverse_rotate_a(t_get *get)
 		tmp = tmp->next;
 	}
 	second_last->next = NULL;
-	ft_lstadd_front(&get->stack_a, tmp);
+	ft_lstadd_front_int(&get->stack_a, tmp);
 }

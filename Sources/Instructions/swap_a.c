@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:15:22 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/20 12:21:25 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/15 22:01:53 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 void	ft_swap_a(t_get *get)
 {
-	t_list	*first;
-	t_list	*second;
-	t_list	*tmp;
+	t_lst	*first;
+	t_lst	*second;
+	t_lst	*tmp;
 
-	first = get->stack_a;
-	second = first->next;
-	tmp = first->next->next;
-	second->next = first;
-	first->next = tmp;
-	get->stack_a = second;
+	if (ft_lstsize_int(get->stack_a) > 1)
+	{
+		first = get->stack_a;
+		second = first->next;
+		tmp = first->next->next;
+		second->next = first;
+		first->next = tmp;
+		get->stack_a = second;
+	}
 }

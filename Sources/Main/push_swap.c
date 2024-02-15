@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:16:04 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/22 15:33:21 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/15 21:56:19 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ void	ft_init_tab(t_param *tab)
 	tab->size = 0;
 	tab->array = NULL;
 	tab->param = NULL;
+}
+
+static void	ft_init_get(t_get *get)
+{
+	get->stack_a = NULL;
+	get->stack_b = NULL;
 }
 
 int	main(int argc, char **argv)
