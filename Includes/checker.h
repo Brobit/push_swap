@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/15 21:07:04 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/18 09:54:24 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int				ft_write_no_err(char *nice_msg);
 int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
+void			ft_debug(t_get *get);
 /* void			ft_debug(t_get *get); */
 
 /* Convertsion to list & check if list is sort*/
