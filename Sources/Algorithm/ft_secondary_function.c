@@ -6,11 +6,24 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:25:41 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/19 19:19:47 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/20 13:11:43 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_push_swap.h"
+
+int	ft_find_sup(t_get *get)
+{
+	int		number;
+	t_lst	*nav;
+
+	nav = get->stack_a;
+	number = get->stack_b->content;
+	while (nav && number > nav->content)
+		nav = nav->next;
+	number = nav->content;
+	return (number);
+}
 
 int	ft_find_target(t_lst *stack, int number)
 {
@@ -32,7 +45,7 @@ int	ft_find_target(t_lst *stack, int number)
 	return (target);
 }
 
-int	ft_find_position(t_lst *stack, int number)
+int	ft_find_pos(t_lst *stack, int number)
 {
 	int		i;
 	t_lst	*nav;

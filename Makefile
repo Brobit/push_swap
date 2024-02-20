@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/02/15 21:54:53 by almarico         ###   ########.fr        #
+#    Updated: 2024/02/20 19:24:01 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/Error_handler/ft_convert_to_int.c\
 	  ./Sources/Error_handler/ft_error_handler.c\
 	  ./Sources/Error_handler/ft_check_tab.c\
+	  ./Sources/Error_handler/ft_init.c\
 	  ./Sources/Instructions/reverse_rotate_a.c\
 	  ./Sources/Instructions/reverse_rotate_b.c\
 	  ./Sources/Instructions/reverse_rotate_a_b.c\
@@ -50,13 +51,17 @@ COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/List/ft_lstclear_int.c\
 	  ./Sources/List/ft_lstdelone_int.c\
 	  ./Sources/List/ft_lstadd_back_int.c\
-	  ./Sources/List/ft_lstadd_front_int.c
+	  ./Sources/List/ft_lstadd_front_int.c\
+	  ./Sources/Algorithm/ft_algorithm.c\
+	  ./Sources/Algorithm/ft_exec.c\
+	  ./Sources/Algorithm/ft_secondary_function.c\
+	  ./Sources/Algorithm/ft_sorting_functions.c\
+	  ./Sources/Stdin_listener/ft_check_instructions.c
 
 PUSH_SWAP_SRC = ./Sources/Main/push_swap.c
 
 CHECKER_SRC = ./Sources/Main/checker.c\
 			  ./Sources/Stdin_listener/ft_stdin_listener.c\
-			  ./Sources/Stdin_listener/ft_check_instructions.c\
 
 all : ${NAME}
 

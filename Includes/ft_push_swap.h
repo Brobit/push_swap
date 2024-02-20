@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/20 09:55:46 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/20 19:26:30 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,13 +150,17 @@ void			ft_find_biggest_number(t_lst *stack, t_algo *algo);
 void			ft_find_mediane(t_lst *stack, int *mediane);
 void			ft_cost_calculation(t_get *get, t_algo *algo);
 void			ft_cost_updater(t_get *get, t_algo *algo);
+void			ft_exec_first_step(t_get *get, t_algo *algo);
+void			ft_exec_second_step(t_get *get, t_algo *algo);
 int				ft_find_pos(t_lst *stack, int number);
 int				ft_find_target(t_lst *stack, int number);
+int				ft_find_sup(t_get *get);
 
 /* Init function */
 void			ft_init_tab(t_param *tab);
 void			ft_init_get(t_get *get);
-void			ft_init_t_sort(t_sort_a *sort_a);
-void			ft_init_t_target(t_target *cost);
+int				ft_init_t_sort(t_sort_a *sort_a);
+int				ft_init_t_target(t_target *cost);
+int				ft_init_algo(t_algo *algo);
 
 #endif // !FT_PUSH_SWAP_H
