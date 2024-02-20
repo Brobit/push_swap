@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdin_listener.c                                :+:      :+:    :+:   */
+/*   ft_exec.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 12:29:13 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/19 11:55:47 by almarico         ###   ########.fr       */
+/*   Created: 2024/02/19 13:48:19 by almarico          #+#    #+#             */
+/*   Updated: 2024/02/19 13:50:14 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Includes/checker.h"
+#include "../../Includes/ft_push_swap.h"
 
-int	ft_stdin_listener(t_stdin *the, t_get *get)
+void	ft_exec(char *instruction, t_get *get)
 {
-	the->tab = NULL;
-	the->tab = get_next_line(STDIN);
-	while (the->tab != NULL)
-	{
-		if (!ft_check_instructions(the->tab, get))
-			return (ft_write_err(ERR_MSG_INSTRUCTION));
-		the->tab = get_next_line(STDIN);
-	}
-	return (FUNCTION_SUCCESS);
+	ft_check_instructions(instruction, get);
+	ft_write_no_err(instruction);
 }

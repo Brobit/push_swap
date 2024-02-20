@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/15 21:52:01 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:55:46 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PUSH_SWAP_H
 
 # include "../libft-complete/libft/libft.h"
+# include "../libft-complete/printf/ft_printf.h"
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
@@ -42,17 +43,17 @@ no error !!!\n"
 # define STDIN						0
 # define STDOUT						1
 # define STDERR						2
-# define PA							1
-# define PB							2
-# define SA							3
-# define SB							4
-# define SAB						5
-# define RA							6
-# define RB							7
-# define RAB						8
-# define RRA						9
-# define RRB						10
-# define RRAB						11
+# define PA							"pa\n"
+# define PB							"pb\n"
+# define SA							"sa\n"
+# define SB							"sb\n"
+# define SAB						"ss\n"
+# define RA							"ra\n"
+# define RB							"rb\n"
+# define RAB						"rr\n"
+# define RRA						"rra\n"
+# define RRB						"rrb\n"
+# define RRAB						"rrr\n"
 
 /* Stucture for the error handler */
 typedef struct s_param
@@ -76,6 +77,31 @@ typedef struct s_get
 	t_lst		*stack_b;
 }				t_get;
 
+/* Structure for the algorithm */
+typedef struct s_sort_a
+{
+	int			biggest_num;
+	int			bnp;
+	int			mediane;
+}				t_sort_a;
+
+typedef struct s_target
+{
+	int			number;
+	int			position;
+	int			target_num;
+	int			target_pos;
+	int			mvt_cost;
+	int			mediane_sa;
+	int			mediane_sb;
+}				t_target;
+
+typedef struct s_algo
+{
+	t_sort_a	*sort_a;
+	t_target	*cost;
+}				t_algo;
+
 /* Error handler */
 int				ft_convert_argv_to_str(char **argv, t_param *tab);
 int				ft_convert_to_int(t_param *tab);
@@ -85,8 +111,9 @@ int				ft_error_handler(int argc, char **argv, t_param *tab);
 int				ft_check_tab(t_param *tab);
 int				ft_check_duplication(t_param *tab);
 
-/* Convertsion to list */
+/* Convertsion to list & check if list is sort*/
 int				ft_convert_to_list(t_param *tab, t_get *get);
+int				ft_check_list_is_sorted(t_get *get);
 
 /* List function */
 
@@ -112,5 +139,24 @@ void			ft_swap_a_b(t_get *get);
 void			ft_reverse_rotate_a(t_get *get);
 void			ft_reverse_rotate_b(t_get *get);
 void			ft_reverse_rotate_a_b(t_get *get);
+int				ft_check_instructions(char *tab, t_get *get);
+
+/* algorithm function */
+void			ft_exec(char *instruction, t_get *get);
+void			ft_algorithm(t_get *get, t_algo *algo);
+void			ft_sort_under_three(t_get *get, t_algo *algo);
+void			ft_sort_stack(t_get *get, t_algo *algo);
+void			ft_find_biggest_number(t_lst *stack, t_algo *algo);
+void			ft_find_mediane(t_lst *stack, int *mediane);
+void			ft_cost_calculation(t_get *get, t_algo *algo);
+void			ft_cost_updater(t_get *get, t_algo *algo);
+int				ft_find_pos(t_lst *stack, int number);
+int				ft_find_target(t_lst *stack, int number);
+
+/* Init function */
+void			ft_init_tab(t_param *tab);
+void			ft_init_get(t_get *get);
+void			ft_init_t_sort(t_sort_a *sort_a);
+void			ft_init_t_target(t_target *cost);
 
 #endif // !FT_PUSH_SWAP_H

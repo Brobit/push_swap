@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdin_listener.c                                :+:      :+:    :+:   */
+/*   ft_algorithm.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 12:29:13 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/19 11:55:47 by almarico         ###   ########.fr       */
+/*   Created: 2024/02/18 11:41:06 by almarico          #+#    #+#             */
+/*   Updated: 2024/02/19 16:59:58 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Includes/checker.h"
+#include "../../Includes/ft_push_swap.h"
 
-int	ft_stdin_listener(t_stdin *the, t_get *get)
+void	ft_algorithm(t_get *get, t_algo *algo)
 {
-	the->tab = NULL;
-	the->tab = get_next_line(STDIN);
-	while (the->tab != NULL)
-	{
-		if (!ft_check_instructions(the->tab, get))
-			return (ft_write_err(ERR_MSG_INSTRUCTION));
-		the->tab = get_next_line(STDIN);
-	}
-	return (FUNCTION_SUCCESS);
+	if (ft_lstsize_int(get->stack_a) <= 3)
+		ft_sort_under_three(get, algo);
+	else if (ft_lstsize_int(get->stack_a) > 3)
+		ft_sort_stack(get, algo);
+	if (!ft_check_list_is_sorted(get))
+		ft_algorithm(get, algo);
 }

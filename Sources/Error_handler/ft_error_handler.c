@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:51:29 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/18 09:57:20 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:24:17 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ void	ft_debug(t_get *get)
 {
 	t_lst	*tmp;
 
-	printf("stack_a : ");
+	ft_printf("stack_a : ");
 	tmp = get->stack_a;
 	while (tmp != NULL)
 	{
-		printf("%d->", tmp->content);
+		ft_printf("%d->", tmp->content);
 		tmp = tmp->next;
 	}
-	printf("\n");
-	printf("stack_b : ");
+	ft_printf("\n");
+	ft_printf("stack_b : ");
 	tmp = get->stack_b;
 	while (tmp != NULL)
 	{
-		printf("%d->", tmp->content);
+		ft_printf("%d->", tmp->content);
 		tmp = tmp->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 }
 
 int	ft_write_err(char *err_msg)

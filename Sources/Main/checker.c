@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:23:14 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/14 10:57:51 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:58:05 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAIL);
 	if (!ft_check_list_is_sorted(&get))
 	{
+		ft_write_err(ERR_LIST_NOT_SORTED);
 		ft_write_no_err("KO\n");
 		return (EXIT_FAIL);
 	}
