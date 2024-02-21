@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:25:41 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/20 13:11:43 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:25:32 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,14 @@ void	ft_find_biggest_number(t_lst *stack, t_algo *algo)
 	t_lst	*nav;
 
 	nav = stack;
-	algo->sort_a->biggest_num = stack->content;
-	algo->sort_a->bnp = ft_find_pos(stack, algo->sort_a->biggest_num);
+	algo->sort_a.biggest_num = stack->content;
+	algo->sort_a.bnp = ft_find_pos(stack, algo->sort_a.biggest_num);
 	while (nav)
 	{
-		if (algo->sort_a->biggest_num < nav->content)
+		if (algo->sort_a.biggest_num < nav->content)
 		{
-			algo->sort_a->biggest_num = nav->content;
-			algo->sort_a->bnp = ft_find_pos(stack, algo->sort_a->biggest_num);
+			algo->sort_a.biggest_num = nav->content;
+			algo->sort_a.bnp = ft_find_pos(stack, algo->sort_a.biggest_num);
 		}
 		nav = nav->next;
 	}

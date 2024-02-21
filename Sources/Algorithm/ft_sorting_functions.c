@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:30:24 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/20 19:02:32 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:23:19 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_cost_updater(t_get *get, t_algo *algo)
 	t_lst	*nav;
 
 	nav = get->stack_a;
-	algo->cost->number = get->stack_a->content;
-	algo->cost->position = ft_find_pos(get->stack_a, algo->cost->number);
-	ft_find_mediane(get->stack_a, &algo->cost->mediane_sa);
-	ft_find_mediane(get->stack_b, &algo->cost->mediane_sb);
-	algo->cost->target_num = ft_find_target(get->stack_b, algo->cost->number);
-	algo->cost->target_pos = ft_find_pos(get->stack_b, algo->cost->target_num);
+	algo->cost.number = get->stack_a->content;
+	algo->cost.position = ft_find_pos(get->stack_a, algo->cost.number);
+	ft_find_mediane(get->stack_a, &algo->cost.mediane_sa);
+	ft_find_mediane(get->stack_b, &algo->cost.mediane_sb);
+	algo->cost.target_num = ft_find_target(get->stack_b, algo->cost.number);
+	algo->cost.target_pos = ft_find_pos(get->stack_b, algo->cost.target_num);
 	while (nav)
 	{
 		ft_cost_calculation(get, algo);
@@ -35,7 +35,7 @@ void	ft_cost_calculation(t_get *get, t_algo *algo)
 	t_target	tmp;
 
 	tmp.number = get->stack_a->content;
-	tmp.position = ft_find_pos(get->stack_a, algo->cost->number);
+	tmp.position = ft_find_pos(get->stack_a, algo->cost.number);
 	ft_find_mediane(get->stack_a, &tmp.mediane_sa);
 	ft_find_mediane(get->stack_b, &tmp.mediane_sb);
 	tmp.target_num = ft_find_target(get->stack_b, tmp.number);
@@ -48,18 +48,18 @@ void	ft_cost_calculation(t_get *get, t_algo *algo)
 		tmp.mvt_cost += tmp.target_pos;
 	else if (tmp.target_pos > tmp.mediane_sb)
 		tmp.mvt_cost += ft_lstsize_int(get->stack_b) - tmp.target_pos;
-	if (tmp.mvt_cost < algo->cost->mvt_cost)
-		algo->cost = &tmp;
+	if (tmp.mvt_cost < algo->cost.mvt_cost)
+		algo->cost = tmp;
 }
 
 void	ft_sort_under_three(t_get *get, t_algo *algo)
 {
 	ft_find_biggest_number(get->stack_a, algo);
-	while (algo->sort_a->bnp != ft_lstsize_int(get->stack_a))
+	while (algo->sort_a.bnp != ft_lstsize_int(get->stack_a))
 	{
-		if (algo->sort_a->bnp < algo->sort_a->mediane)
+		if (algo->sort_a.bnp < algo->sort_a.mediane)
 			ft_exec(RRA, get);
-		else if (algo->sort_a->bnp >= algo->sort_a->mediane)
+		else if (algo->sort_a.bnp >= algo->sort_a.mediane)
 			ft_exec(RA, get);
 		ft_find_biggest_number(get->stack_a, algo);
 	}
@@ -73,7 +73,7 @@ void	ft_sort_stack(t_get *get, t_algo *algo)
 
 	i = 2;
 	ft_find_biggest_number(get->stack_a, algo);
-	if (algo->sort_a->bnp == 1)
+	if (algo->sort_a.bnp == 1)
 		ft_exec(RA, get);
 	while (i-- > 0 && ft_lstsize_int(get->stack_a))
 		ft_exec(PB, get);

@@ -6,24 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:23:14 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/19 16:58:05 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:27:28 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/checker.h"
-
-static void	ft_init_tab(t_param *tab)
-{
-	tab->size = 0;
-	tab->array = NULL;
-	tab->param = NULL;
-}
-
-static void	ft_init_get(t_get *get)
-{
-	get->stack_a = NULL;
-	get->stack_b = NULL;
-}
 
 int	main(int argc, char **argv)
 {

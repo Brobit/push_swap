@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/20 19:26:30 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:12:14 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ typedef struct s_target
 
 typedef struct s_algo
 {
-	t_sort_a	*sort_a;
-	t_target	*cost;
+	t_sort_a	sort_a;
+	t_target	cost;
 }				t_algo;
 
 /* Error handler */
@@ -159,8 +159,7 @@ int				ft_find_sup(t_get *get);
 /* Init function */
 void			ft_init_tab(t_param *tab);
 void			ft_init_get(t_get *get);
-int				ft_init_t_sort(t_sort_a *sort_a);
-int				ft_init_t_target(t_target *cost);
-int				ft_init_algo(t_algo *algo);
+void			ft_init_t_sort(t_sort_a *sort_a);
+void			ft_init_t_target(t_target *cost);
 
 #endif // !FT_PUSH_SWAP_H
