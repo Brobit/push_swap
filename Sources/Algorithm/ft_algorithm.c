@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 11:41:06 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/19 16:59:58 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/27 14:51:17 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,4 @@ void	ft_algorithm(t_get *get, t_algo *algo)
 		ft_sort_under_three(get, algo);
 	else if (ft_lstsize_int(get->stack_a) > 3)
 		ft_sort_stack(get, algo);
-	if (!ft_check_list_is_sorted(get))
-		ft_algorithm(get, algo);
 }
