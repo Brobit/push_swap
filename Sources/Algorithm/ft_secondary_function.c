@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:25:41 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/27 17:38:50 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/28 04:49:05 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ int	ft_find_lowest(t_lst *stack)
 	lowest = nav.content;
 	while (nav.next != NULL)
 	{
-		if (lowest > nav.content)
+		if (nav.content < lowest)
 			lowest = nav.content;
 		nav = *nav.next;
 	}
+	if (nav.content < lowest)
+		lowest = nav.content;
 	return (lowest);
 }
 
@@ -35,11 +37,15 @@ int	ft_find_sup(t_lst *stack, int nb_search)
 
 	nav = *stack;
 	number = nb_search;
-	while ((nav.next != NULL) && (number > nav.content))
-		nav = *nav.next;
-	if (number < nav.content)
-		number = nav.content;
-	else if ((nav.next == NULL) && (number == nb_search))
+	while (nav.next != NULL)
+	{
+		if (number < nav.content)
+			nav.next = NULL;
+		else
+			nav = *nav.next;
+	}
+	number = nav.content;
+	if (nb_search > number)
 		return (ft_find_lowest(stack));
 	return (number);
 }
@@ -57,6 +63,8 @@ int	ft_find_target(t_lst *stack, int number)
 			target = nav.content;
 		nav = *nav.next;
 	}
+	if ((nav.content > number) && (nav.content < target))
+		target = nav.content;
 	return (target);
 }
 

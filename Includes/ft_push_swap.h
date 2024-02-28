@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/27 14:36:53 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/28 05:54:33 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ void			ft_sort_stack(t_get *get, t_algo *algo);
 void			ft_find_biggest_number(t_lst *stack, t_algo *algo);
 void			ft_find_mediane(t_lst *stack, int *mediane);
 void			ft_cost_calculation(t_get *get, t_algo *algo, t_lst *nav);
-void			ft_cost_updater(t_get *get, t_algo *algo);
+void			ft_cost_updater(t_lst *stack, t_algo *algo, int number);
 void			ft_exec_first_step(t_get *get, t_algo *algo);
 void			ft_exec_second_step(t_get *get, t_algo *algo);
 int				ft_find_pos(t_lst *stack, int number);

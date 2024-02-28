@@ -6,12 +6,11 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:51:29 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/19 11:24:17 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/28 02:28:26 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_push_swap.h"
-#include <stdio.h>
 
 void	ft_debug(t_get *get)
 {
