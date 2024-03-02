@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:24:37 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/21 13:20:38 by almarico         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:11:14 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	ft_init_t_target(t_target *cost)
 	cost->number = 0;
 	cost->mvt_cost = 0;
 	cost->position = 0;
-	cost->target_num = 0;
-	cost->target_pos = 0;
+	cost->tar_num = 0;
+	cost->tar_pos = 0;
 	cost->mediane_sa = 0;
 	cost->mediane_sb = 0;
 }

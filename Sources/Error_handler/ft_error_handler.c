@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:51:29 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/28 02:28:26 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:40:14 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ int	ft_error_handler(int argc, char **argv, t_param *tab)
 		return (ft_write_err(ERR_MSG_GENERIC));
 	if (!ft_check_duplication(tab))
 		return (ft_write_err(ERR_MSG_GENERIC));
-	return (ft_write_no_err(OK_MSG));
+	return (FUNCTION_SUCCESS);
 }

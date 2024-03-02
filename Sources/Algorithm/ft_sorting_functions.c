@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:30:24 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/28 05:56:50 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/02 11:55:53 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	ft_cost_updater(t_lst *stack, t_algo *algo, int number)
 {
 	algo->cost.number = number;
 	algo->cost.position = 1;
-	algo->cost.target_num = ft_find_target(stack, algo->cost.number);
-	algo->cost.target_pos = ft_find_pos(stack, algo->cost.target_num);
+	algo->cost.tar_num = ft_find_target(stack, algo->cost.number);
+	algo->cost.tar_pos = ft_find_pos(stack, algo->cost.tar_num);
 }
 
 void	ft_sort_under_three(t_get *get, t_algo *algo)
@@ -72,8 +72,6 @@ void	ft_sort_stack(t_get *get, t_algo *algo)
 	while (ft_lstsize_int(get->stack_a) > 3)
 	{
 		ft_init_t_target(&algo->cost);
-		ft_find_mediane(get->stack_a, &algo->cost.mediane_sa);
-		ft_cost_updater(get->stack_b, algo, get->stack_a->content);
 		ft_exec_first_step(get, algo);
 		ft_exec(PB, get);
 	}
@@ -81,7 +79,7 @@ void	ft_sort_stack(t_get *get, t_algo *algo)
 	while (ft_lstsize_int(get->stack_b) > 0)
 	{
 		ft_init_t_target(&algo->cost);
-		ft_find_mediane(get->stack_b, &algo->cost.mediane_sb);
+		ft_find_mediane(get->stack_a, &algo->cost.mediane_sa);
 		ft_cost_updater(get->stack_a, algo, get->stack_b->content);
 		ft_exec_second_step(get, algo);
 		ft_exec(PA, get);

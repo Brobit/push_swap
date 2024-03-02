@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 13:48:19 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/28 05:59:00 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:19:22 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,16 @@ void	ft_exec(char *instruction, t_get *get)
 
 void	ft_exec_first_step(t_get *get, t_algo *algo)
 {
-	int	size;
+	t_lst	nav;
 
-	size = ft_lstsize_int(get->stack_b);
-	while (algo->cost.target_pos != 1 && algo->cost.target_pos != size)
+	nav = *get->stack_a;
+	while (nav.next != NULL)
 	{
-		if (algo->cost.target_pos <= algo->cost.mediane_sb)
-		{
-			ft_exec(RB, get);
-			algo->cost.target_pos--;
-		}
-		else if (algo->cost.target_pos > algo->cost.mediane_sb)
-		{
-			ft_exec(RRB, get);
-			algo->cost.target_pos++;
-		}
+		ft_cost_calculation(get, algo, &nav);
+		nav = *nav.next;
 	}
-	if (algo->cost.target_pos == size)
-		ft_exec(RRB, get);
+	ft_cost_calculation(get, algo, &nav);
+	ft_move_to_pos(get, algo);
 }
 
 void	ft_exec_second_step(t_get *get, t_algo *algo)
@@ -45,19 +37,19 @@ void	ft_exec_second_step(t_get *get, t_algo *algo)
 	int	size;
 
 	size = ft_lstsize_int(get->stack_a);
-	while (algo->cost.target_pos != 1 && algo->cost.target_pos != size)
+	while (algo->cost.tar_pos != 1 && algo->cost.tar_pos != size)
 	{
-		if (algo->cost.target_pos <= algo->cost.mediane_sa)
+		if (algo->cost.tar_pos <= algo->cost.mediane_sa)
 		{
 			ft_exec(RA, get);
-			algo->cost.target_pos--;
+			algo->cost.tar_pos--;
 		}
-		else if (algo->cost.target_pos > algo->cost.mediane_sa)
+		else if (algo->cost.tar_pos > algo->cost.mediane_sa)
 		{
 			ft_exec(RRA, get);
-			algo->cost.target_pos++;
+			algo->cost.tar_pos++;
 		}
 	}
-	if (algo->cost.target_pos == size)
+	if (algo->cost.tar_pos == size)
 		ft_exec(RRA, get);
 }

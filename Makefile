@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/02/20 19:24:01 by almarico         ###   ########.fr        #
+#    Updated: 2024/03/02 10:18:48 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,8 @@ COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/Algorithm/ft_exec.c\
 	  ./Sources/Algorithm/ft_secondary_function.c\
 	  ./Sources/Algorithm/ft_sorting_functions.c\
+	  ./Sources/Algorithm/ft_cost_calculation.c\
+	  ./Sources/Algorithm/ft_move.c\
 	  ./Sources/Stdin_listener/ft_check_instructions.c
 
 PUSH_SWAP_SRC = ./Sources/Main/push_swap.c

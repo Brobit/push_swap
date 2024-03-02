@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/28 05:54:33 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:17:19 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ typedef struct s_target
 {
 	int			number;
 	int			position;
-	int			target_num;
-	int			target_pos;
+	int			tar_num;
+	int			tar_pos;
 	int			mvt_cost;
 	int			mediane_sa;
 	int			mediane_sb;
@@ -152,6 +152,12 @@ void			ft_cost_calculation(t_get *get, t_algo *algo, t_lst *nav);
 void			ft_cost_updater(t_lst *stack, t_algo *algo, int number);
 void			ft_exec_first_step(t_get *get, t_algo *algo);
 void			ft_exec_second_step(t_get *get, t_algo *algo);
+void			ft_move(t_get *get, char *move, int *nb, int sign);
+void			ft_move_to_pos(t_get *get, t_algo *algo);
+void			ft_move_simple(t_get *get, t_algo *algo,
+					int size_a, int size_b);
+void			ft_move_double(t_get *get, t_algo *algo,
+					int size_a, int size_b);
 int				ft_find_pos(t_lst *stack, int number);
 int				ft_find_target(t_lst *stack, int number);
 int				ft_find_sup(t_lst *stack, int nb_search);
