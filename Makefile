@@ -6,7 +6,7 @@
 #    By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 15:21:05 by almarico          #+#    #+#              #
-#    Updated: 2024/03/02 10:18:48 by almarico         ###   ########.fr        #
+#    Updated: 2024/03/03 11:44:00 by almarico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ COMMON_SRC = ./Sources/Error_handler/ft_convert_argv_to_str.c\
 	  ./Sources/Error_handler/ft_error_handler.c\
 	  ./Sources/Error_handler/ft_check_tab.c\
 	  ./Sources/Error_handler/ft_init.c\
+	  ./Sources/Error_handler/ft_free.c\
 	  ./Sources/Instructions/reverse_rotate_a.c\
 	  ./Sources/Instructions/reverse_rotate_b.c\
 	  ./Sources/Instructions/reverse_rotate_a_b.c\

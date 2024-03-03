@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/03/02 10:17:19 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/03 21:30:41 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,9 @@ typedef struct s_algo
 }				t_algo;
 
 /* Error handler */
+void			ft_free_list(t_lst *stack_a);
+void			ft_free_tab(t_param *tab);
+void			ft_free_argv(char **argv);
 int				ft_convert_argv_to_str(char **argv, t_param *tab);
 int				ft_convert_to_int(t_param *tab);
 int				ft_write_err(char *err_msg);

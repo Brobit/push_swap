@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:07:33 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/21 13:26:13 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/03 11:37:53 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int	ft_convert_to_int(t_param *tab)
 
 	tab->array = malloc(tab->size * sizeof(t_ll));
 	if (!tab->array)
+	{
+		ft_free_tab(tab);
 		return (ft_write_err(ERR_MSG_MALLOC));
+	}
 	i = 0;
 	while (tab->param[i] && i < tab->size)
 	{
