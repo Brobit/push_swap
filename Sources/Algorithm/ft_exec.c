@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 13:48:19 by almarico          #+#    #+#             */
-/*   Updated: 2024/03/02 10:19:22 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/04 10:53:46 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,33 @@ void	ft_exec(char *instruction, t_get *get)
 void	ft_exec_first_step(t_get *get, t_algo *algo)
 {
 	t_lst	nav;
+	int		pos;
 
 	nav = *get->stack_a;
-	while (nav.next != NULL)
+	pos = 1;
+	while (pos <= 5 && pos < get->size_a)
 	{
 		ft_cost_calculation(get, algo, &nav);
 		nav = *nav.next;
+		pos++;
 	}
-	ft_cost_calculation(get, algo, &nav);
+	while (pos < (get->size_a - 5))
+	{
+		nav = *nav.next;
+		pos++;
+	}
+	while (pos < get->size_a)
+	{
+		ft_cost_calculation(get, algo, &nav);
+		nav = *nav.next;
+		pos++;
+	}
 	ft_move_to_pos(get, algo);
 }
 
 void	ft_exec_second_step(t_get *get, t_algo *algo)
 {
-	int	size;
-
-	size = ft_lstsize_int(get->stack_a);
-	while (algo->cost.tar_pos != 1 && algo->cost.tar_pos != size)
+	while (algo->cost.tar_pos != 1 && algo->cost.tar_pos != get->size_a)
 	{
 		if (algo->cost.tar_pos <= algo->cost.mediane_sa)
 		{
@@ -50,6 +60,6 @@ void	ft_exec_second_step(t_get *get, t_algo *algo)
 			algo->cost.tar_pos++;
 		}
 	}
-	if (algo->cost.tar_pos == size)
+	if (algo->cost.tar_pos == get->size_a)
 		ft_exec(RRA, get);
 }

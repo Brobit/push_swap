@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:24:37 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/28 13:11:14 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/04 09:37:05 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_init_get(t_get *get)
 {
 	get->stack_a = NULL;
 	get->stack_b = NULL;
+	get->size_a = ft_lstsize_int(get->stack_a);
+	get->size_b = ft_lstsize_int(get->stack_b);
 }
 
 void	ft_init_t_sort(t_sort_a *sort_a)

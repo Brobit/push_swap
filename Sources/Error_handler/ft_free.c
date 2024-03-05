@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 11:18:40 by almarico          #+#    #+#             */
-/*   Updated: 2024/03/03 21:46:20 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/03 22:57:44 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	ft_free_tab(t_param *tab)
 	i = 0;
 	while (tab->param[i])
 		free(tab->param[i++]);
+	free(tab->param);
 	tab->param = NULL;
 	free(tab->array);
 	tab->array = NULL;

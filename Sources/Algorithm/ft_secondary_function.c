@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:25:41 by almarico          #+#    #+#             */
-/*   Updated: 2024/02/28 04:49:05 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/04 10:28:48 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,6 @@ int	ft_find_target(t_lst *stack, int number)
 	if ((nav.content > number) && (nav.content < target))
 		target = nav.content;
 	return (target);
-}
-
-int	ft_find_pos(t_lst *stack, int number)
-{
-	int		i;
-	t_lst	*nav;
-
-	i = 1;
-	nav = stack;
-	while (nav && (nav->content != number))
-	{
-		nav = nav->next;
-		i++;
-	}
-	return (i);
 }
 
 void	ft_find_mediane(t_lst *stack, int *mediane)

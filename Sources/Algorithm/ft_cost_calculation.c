@@ -6,11 +6,26 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:05:00 by almarico          #+#    #+#             */
-/*   Updated: 2024/03/02 22:02:03 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/04 10:24:33 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_push_swap.h"
+
+int	ft_find_pos(t_lst *stack, int number)
+{
+	int		i;
+	t_lst	*nav;
+
+	i = 1;
+	nav = stack;
+	while (nav && (nav->content != number))
+	{
+		nav = nav->next;
+		i++;
+	}
+	return (i);
+}
 
 static void	ft_check_cost(t_get *get, t_target *tmp, t_algo *algo)
 {

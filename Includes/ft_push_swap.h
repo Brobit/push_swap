@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:30:02 by almarico          #+#    #+#             */
-/*   Updated: 2024/03/03 21:30:41 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/04 09:53:38 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ typedef struct s_get
 {
 	t_lst		*stack_a;
 	t_lst		*stack_b;
+	int			size_a;
+	int			size_b;
 }				t_get;
 
 /* Structure for the algorithm */
@@ -157,10 +159,8 @@ void			ft_exec_first_step(t_get *get, t_algo *algo);
 void			ft_exec_second_step(t_get *get, t_algo *algo);
 void			ft_move(t_get *get, char *move, int *nb, int sign);
 void			ft_move_to_pos(t_get *get, t_algo *algo);
-void			ft_move_simple(t_get *get, t_algo *algo,
-					int size_a, int size_b);
-void			ft_move_double(t_get *get, t_algo *algo,
-					int size_a, int size_b);
+void			ft_move_simple(t_get *get, t_algo *algo);
+void			ft_move_double(t_get *get, t_algo *algo);
 int				ft_find_pos(t_lst *stack, int number);
 int				ft_find_target(t_lst *stack, int number);
 int				ft_find_sup(t_lst *stack, int nb_search);

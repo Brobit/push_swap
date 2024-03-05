@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:51:29 by almarico          #+#    #+#             */
-/*   Updated: 2024/03/03 21:54:57 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:13:36 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_write_no_err(char *nice_msg)
 int	ft_error_handler(int argc, char **argv, t_param *tab)
 {
 	if (argc == 0)
-		return (ft_write_err(ERR_MSG_NEA));
+		return (FUNCTION_FAIL);
 	ft_convert_argv_to_str(argv, tab);
 	if (!ft_check_tab(tab))
 		return (ft_write_err(ERR_MSG_GENERIC));
