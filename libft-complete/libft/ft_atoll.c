@@ -6,7 +6,7 @@
 /*   By: almarico <almarico@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:53:33 by almarico          #+#    #+#             */
-/*   Updated: 2024/01/21 12:47:15 by almarico         ###   ########.fr       */
+/*   Updated: 2024/03/05 21:06:08 by almarico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_ll	ft_atoll(const char *string)
 		res += (string[i] - '0');
 		i++;
 		if (res > INT_MAX || res < INT_MIN)
-			return (res);
+			return (res * neg);
 	}
 	return (res * neg);
 }
